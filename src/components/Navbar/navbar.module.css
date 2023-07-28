@@ -1,0 +1,17 @@
+.nav {
+    @apply text-arsenic font-bold relative 
+}
+
+.activeLink {
+    @apply relative transition-all;
+
+  }
+  
+ .activeLink::after {
+   
+        @apply absolute -bottom-1 left-0 w-full h-0.5 bg-pastel-cyan shadow-md ;
+        content: "";
+        
+       
+      
+ }
