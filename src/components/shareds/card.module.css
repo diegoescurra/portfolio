@@ -1,24 +1,27 @@
 .card {
     display: flex;
     align-items: center;
-    width: 75vw;
-    max-width: 650px;
+    width: 31rem;
     padding: 50px 30px 50px 20px;
     background: #ffffff;
     border-radius: 24px;
   }
   
   .card img {
-    max-width: 280px;
-    width: 28vw;
-    height: 300px;
-    object-fit: cover;
+    max-width: 14rem;
+    height: 10rem;
+    object-fit: fill;
     margin-left: -60px;
     margin-right: 30px;
     border-radius: inherit;
     box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+    transition: .7s;
   }
   
+.card img:hover {
+  transform: scale(1.05);
+}
+
   .card h2 {
     font-size: 22px;
     margin-right: 30px;
@@ -37,7 +40,7 @@
     margin-bottom: 24px;
   }
   
-  .card button {
+  .card a {
     border: 0;
     background: linear-gradient(90deg, #33434F, #A4D8D8);
     color: #f8f8f8;
@@ -50,8 +53,8 @@
   @media (width <= 740px) {
     .card {
       margin: 0 40px;
-      padding-left: 50px;
-      padding-right: 50px;
+      padding-left: 1rem;
+      padding-right: 1rem;
       width: 100%;
       text-align: center;
       flex-direction: column;
@@ -65,6 +68,10 @@
     .card img {
       margin: -50px 0 30px 0;
       width: 100%;
-      max-width: 1000px;
+      height: 10rem;
     }
+    .card a {
+     font-size: .7rem;
+    }
+
   }
