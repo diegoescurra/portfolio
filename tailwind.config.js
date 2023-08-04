@@ -23,6 +23,8 @@ export default {
     },
     extend: {
       spacing: {
+        xxs: '7rem',
+        xs: '14rem',
         sm: '21rem',
         md: '35rem',
         lg: '56rem',
