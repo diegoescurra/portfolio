@@ -5,7 +5,12 @@ import { Layout } from '../Layout';
 export const Contact = () => {
   const [state, handleSubmit] = useForm("xaygqawn");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return (
+        <div className="h-11">
+
+          <p className='text-arsenic text-4x1'>Gracias por tu mensaje</p>
+        </div>
+      );
   }
   return (
    
@@ -17,6 +22,7 @@ export const Contact = () => {
 
          <input 
          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" 
+         name='email'
          type="email"
           placeholder="janedoe@blindspot.com" 
         />
@@ -33,7 +39,7 @@ export const Contact = () => {
         className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'
         id="message"
         name="message"
-        placeholder="message" 
+        placeholder="Mensaje" 
       />
       </div>
       </div>
@@ -42,10 +48,10 @@ export const Contact = () => {
         field="message"
         errors={state.errors}
       />
-      <div className='mb-4'>
+      <div className='mb-4 flex justify-end'>
 
       <button type="submit" className='flex-shrink-0 bg-shadowc hover:bg-arsenic border-shadowc hover:border-arsenic text-sm border-4 text-white py-1 px-2 rounded' disabled={state.submitting}>
-        Submit
+        Enviar
       </button>
       </div>
       

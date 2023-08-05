@@ -2,6 +2,7 @@ import React from 'react'
 import { Layout } from '../Layout'
 import { About } from './About'
 import { Contact } from './Contact'
+import { Footer } from '../shareds/footer/Footer'
 
 
 
@@ -18,9 +19,9 @@ export const Home = () => {
                         </div>
                         <div className='w-full flex flex-col smd:w-1/2'>
                             <div className='text-arsenic text-7x1 mb-3 smd:text-8xl '>
-                                Hablas pura mierda Foley
+                                Hablas Pura Mierda Foley
                             </div>
-                            <p className='mb-2 p-1'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure mollitia quam maiores rem veniam fugit vero assumenda quae nulla velit quo, doloribus sapiente exercitationem ullam et qui odit. Distinctio, repellendus.</p>
+                            <p className='mb-2 p-1 w-3/4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure mollitia quam maiores rem veniam fugit vero assumenda quae nulla velit quo, doloribus sapiente exercitationem ullam et qui odit. Distinctio, repellendus.</p>
                         </div>
                     </div>
 
@@ -33,6 +34,7 @@ export const Home = () => {
             <section id="contact" className='flex justify-center text-dark w-full h-full'>
                 <Contact />
             </section>
+            <Footer />
         </>
     )
 }

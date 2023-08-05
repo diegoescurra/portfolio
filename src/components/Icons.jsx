@@ -175,6 +175,7 @@ export const NodeJSIcon = (className, ...props) => (
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
+    className= {`w-7 ${className}`}
     {...props}
   >
     <g stroke="#628190" strokeLinecap="round" strokeWidth={1.5}>
