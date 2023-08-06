@@ -1,11 +1,12 @@
 .header {
-    @apply w-full h-28 flex fixed top-0 left-0 z-10 smd:flex smd:justify-between smd:items-center smd:px-14 smd:py-3 text-arsenic;
-    transition: 0.3s;
+    @apply smd:flex smd:justify-between smd:items-center smd:px-14 smd:py-3 smd:bg-gradient-to-r smd:from-solitude smd:to-purple-50 smd:text-arsenic bg-gradient-to-r from-shadowc to-arsenic text-solitude;
+    transition: .3s;
 }
 
 
 .scrolledDown {
-    @apply h-20 w-full  flex fixed top-0 left-0 z-10 smd:flex smd:justify-between smd:items-center smd:px-14 smd:py-3 bg-gradient-to-r from-shadowc to-arsenic text-solitude;
+    @apply smd:h-20 w-full fixed top-0 z-10  bg-gradient-to-r from-shadowc to-arsenic text-solitude;
+    
 }
 
 .nav {
@@ -20,7 +21,7 @@
 
 .isActive::after {
 
-    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-pastel-cyan shadow-md;
+    @apply absolute -bottom-1 left-0 smd:w-full w-20 h-0.5 bg-pastel-cyan shadow-md;
     animation: fadeIn .7s;
     content: "";
 
