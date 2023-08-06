@@ -5,13 +5,9 @@ import { Link } from 'react-scroll';
 
 export const Navbar = () => {
 
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
   const [scrolledDown, setScrolledDown] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
   const handleIsOpen = () => setIsOpen(!isOpen);
-
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
@@ -30,45 +26,6 @@ export const Navbar = () => {
     }
   }, [])
 
-  /*
-    return (
-      <header className={`${estilos.header} ${scrolledDown ? estilos.scrolledDown : ''}`}>
-        <div className="flex items-center justify-between w-full px-32  ">
-  
-          <nav className={estilos.navbar}>
-            <a href='https://www.linkedin.com/in/diego-escurra-6978651ba/?originalSubdomain=cl' target='_blank' className='w-6 mr-3'>
-              <LinkedinIcon />
-            </a>
-            <a href='https://github.com/Sie7he/' target='_blank' className='w-6 mr-3'>
-              <GithubIcon />
-            </a>
-          </nav>
-  
-          <nav>
-            <ul className='flex'>
-              <li className={`${estilos.nav} mr-7 group`}>
-               
-              </li>
-              <li className={`${estilos.nav}  mr-7 group`}>
-  
-                <Link activeClass={estilos.isActive} to="about" offset={-100} spy={true} smooth={true} duration={500} >
-                  Proyectos
-                </Link>
-              </li>
-              <li className={`${estilos.nav}  mr-7 group`}>
-  
-                
-              </li>
-            </ul>
-  
-          </nav>
-        </div>
-          <div className={estilos.menu} onClick={handleClick}>
-            <HamburgerIcon/>
-          </div>
-      </header>
-    );
-    */
   return (
     <header className={`${estilos.header} ${scrolledDown ? estilos.scrolledDown : ''}`}>
       <div className="flex items-center justify-between px-4 py-3 smd:p-0">
