@@ -14,7 +14,7 @@ export const Contact = () => {
   }
   return (
 
-    <div className="w-xl p-4 mb-7">
+    <div className="w-xl p-4 my-xxs">
       <h2 className='text-arsenic mb-3 p-4 text-5xl text-center'>Contacto</h2>
       <form onSubmit={handleSubmit} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
         <div className="grid items-center border-b border-pastel-cyan py-2">
@@ -52,7 +52,7 @@ export const Contact = () => {
         <div className="mb-4">
           <div className="grid items-center border-b border-pastel-cyan py-2">
             <textarea
-              className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'
+              className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 h-44 leading-tight focus:outline-none'
               id="message"
               name="message"
               placeholder="Mensaje"

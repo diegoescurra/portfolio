@@ -9,7 +9,7 @@ import { Footer } from '../shareds/footer/Footer'
 export const Home = () => {
     return (
         <>
-            <main id="hero" className='flex items-center text-dark w-full h-full mt-xxs'>
+            <main id="hero" className='flex items-center w-full h-full pt-xxs relative'>
                 <Layout className='pt-0'>
 
 
@@ -18,10 +18,10 @@ export const Home = () => {
                             <img src='/Software-Developer.png' alt='Diego Escurra' className='w-lg h-auto ' />
                         </div>
                         <div className='w-full flex flex-col smd:w-1/2'>
-                            <div className='text-arsenic text-7x1 mb-3 smd:text-8xl '>
+                            <h1 className='text-arsenic text-5xl smd:text-8xl mb-3'>
                                 Hablas Pura Mierda Foley
-                            </div>
-                            <p className='mb-2 p-1 w-3/4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure mollitia quam maiores rem veniam fugit vero assumenda quae nulla velit quo, doloribus sapiente exercitationem ullam et qui odit. Distinctio, repellendus.</p>
+                            </h1>
+                            <p className='mb-2 p-1 w-full smd:w-3/4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure mollitia quam maiores rem veniam fugit vero assumenda quae nulla velit quo, doloribus sapiente exercitationem ullam et qui odit. Distinctio, repellendus.</p>
                         </div>
                     </div>
 
