@@ -27,4 +27,13 @@ export const projects = [
         buttontxt: 'Visitar el sitio',
         description: 'Encargado de crear el juego de Mortal Kombat, algo sencillo',
     },
+    {
+        id: 4,
+        img: 'https://i.hizliresim.com/uCrrsQ.png',
+        title: 'Mejora Sura Metin2',
+        href: 'https://hillsbienesraices.cl/',
+        icon: [],
+        buttontxt: 'Saquense un metin',
+        description: 'El mejor sura magia negra de cualquier metin2',
+    },
 ];

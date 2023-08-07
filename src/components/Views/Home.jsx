@@ -1,10 +1,11 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import { Layout } from '../Layout'
 import { About } from './About'
 import { Contact } from './Contact'
 import { Footer } from '../shareds/footer/Footer'
 import { Skills } from './Skills'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 
 
 
@@ -13,18 +14,29 @@ export const Home = () => {
     const hero = useRef();
     const img = useRef();
     const text = useRef();
-   
+    const about = useRef();
+    const contact = useRef();
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
+  
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             gsap.from(img.current, { opacity: 0, x:-100, duration: 1, ease: "power2.inOut",})
             gsap.from(text.current, { opacity: 0, x:100, duration: 1, ease: "power2.inOut",} )
-        },hero)
+            gsap.fromTo(about.current,{opacity: 0, y:200},{opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: about.current}})
+            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 2, scrollTrigger: { trigger: contact.current}})
+        },)
         return () => ctx.revert();
     },[])
 
+
+
+    
     return (
         <>
-            <main ref={hero} id="hero" className='flex items-center w-full h-full pt-xxs relative'>
+            <main ref={hero} id="hero" className='flex items-center w-full main '>
                 <Layout className='pt-0'>
 
 
@@ -42,8 +54,8 @@ export const Home = () => {
 
 
                 </Layout>
-            </main>
-            <section id="about" className='flex items-center text-dark w-full  section'>
+                </main>
+            <section ref={about} id="about" className='flex items-center text-dark w-full  section'>
                 <About />
             </section>
             {/* 
@@ -51,9 +63,10 @@ export const Home = () => {
                 <Skills/>
             </section>
             */}
-            <section id="contact" className='flex justify-center text-dark  h-full section'>
+            <section ref={contact} id="contact" className='flex justify-center text-dark  h-full section'>
                 <Contact />
             </section>
+            
             <Footer />
         </>
     )

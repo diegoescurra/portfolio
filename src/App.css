@@ -1,6 +1,11 @@
 html {
     @apply bg-gradient-to-r from-solitude to-purple-50 scroll-smooth;
 }
-section {
+/*section {
     min-height: 49rem;
+}¨
+*/
+
+.main {
+    height: 100vh;
 }
