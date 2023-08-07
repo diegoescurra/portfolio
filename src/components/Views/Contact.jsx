@@ -14,11 +14,11 @@ export const Contact = () => {
   }
   return (
 
-    <div className="w-xl p-4 my-xxs">
-      <h2 className='text-arsenic mb-3 p-4 text-5xl text-center'>Contacto</h2>
-      <form onSubmit={handleSubmit} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
-        <div className="grid items-center border-b border-pastel-cyan py-2">
-          <div className="mb-4">
+    <div className="w-lg p-4">
+      <h2 className='text-arsenic p-4 text-5xl text-center'>Contacto</h2>
+      <form onSubmit={handleSubmit} className='bg-white shadow-md rounded px-8'>
+        <div className="grid items-center border-b border-pastel-cyan">
+          <div className='my-4'> 
 
 
             <input
@@ -64,9 +64,9 @@ export const Contact = () => {
           field="message"
           errors={state.errors}
         />
-        <div className='mb-4 flex justify-end'>
+        <div className='my-7 flex justify-end'>
 
-          <button type="submit" className='flex-shrink-0 bg-shadowc hover:bg-arsenic border-shadowc hover:border-arsenic text-sm border-4 text-white py-1 px-2 rounded' disabled={state.submitting}>
+          <button type="submit" className='flex-shrink-0 bg-shadowc hover:bg-arsenic border-shadowc hover:border-arsenic text-sm border-4 text-white py-1 px-2 mb-4 rounded' disabled={state.submitting}>
             Enviar
           </button>
         </div>
