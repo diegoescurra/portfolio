@@ -36,8 +36,8 @@ export const Home = () => {
     
     return (
         <>
+            <Layout >
             <main ref={hero} id="hero" className='flex items-center justify-items-center w-full main '>
-                
 
 
                     <div className="flex items-center justify-between w-full h-auto ">
@@ -51,11 +51,11 @@ export const Home = () => {
                             <p className='mb-2 p-1 w-full smd:w-3/4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure mollitia quam maiores rem veniam fugit vero assumenda quae nulla velit quo, doloribus sapiente exercitationem ullam et qui odit. Distinctio, repellendus.</p>
                         </div>
                     </div>
-
+                   
 
                
                 </main>
-            <section ref={about} id="about" className='relative flex items-center text-dark w-full h-full pt-14 section'>
+            <section ref={about} id="about" className='relative flex items-center text-dark w-full h-full smd:pt-14 pt-4 section'>
                 <About />
             </section>
             {/* 
@@ -66,7 +66,7 @@ export const Home = () => {
             <section ref={contact} id="contact" className='flex justify-center text-dark  h-full section'>
                 <Contact />
             </section>
-            
+            </Layout>
             <Footer />
         </>
     )

@@ -9,3 +9,10 @@ section {
 .main {
     min-height: 49rem;
 }
+
+@media screen and (max-width: 768px){
+    
+.main {
+    min-height: 28rem;
+}
+}
