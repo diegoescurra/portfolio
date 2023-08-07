@@ -8,9 +8,9 @@ export const About = () => {
 
 
     return (
-        <div  className='w-full h-full'>
+        <div  className='w-full h-full pt-14'>
             <div>
-                <h2 className='text-arsenic p-4 text-5xl text-center mb-7'>Proyectos</h2>
+                <h2 className='text-arsenic p-14 text-5xl text-center mb-7'>Proyectos</h2>
 
                 <div className="grid grid-cols-1 gap-4 w-full justify-center sxl:grid-cols-2">
                     {projects.map((card, index) => (

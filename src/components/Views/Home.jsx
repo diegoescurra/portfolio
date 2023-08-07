@@ -36,8 +36,8 @@ export const Home = () => {
     
     return (
         <>
-            <main ref={hero} id="hero" className='flex items-center w-full main '>
-                <Layout className='pt-0'>
+            <main ref={hero} id="hero" className='flex items-center justify-items-center w-full main '>
+                
 
 
                     <div className="flex items-center justify-between w-full h-auto ">
@@ -53,9 +53,9 @@ export const Home = () => {
                     </div>
 
 
-                </Layout>
+               
                 </main>
-            <section ref={about} id="about" className='flex items-center text-dark w-full  section'>
+            <section ref={about} id="about" className='relative flex items-center text-dark w-full h-full pt-14 section'>
                 <About />
             </section>
             {/* 

@@ -50,13 +50,13 @@ export const Navbar = () => {
         </div>
       </div>
       <nav className={`${isOpen ? 'block' : 'hidden'} px-2 pt-2 pb-4 smd:flex smd:p-0`} >
-        <Link activeClass={estilos.isActive} className="mt-1 block px-2 py-1 cursor-pointer smd:hover:text-shadowc font-semibold " to="hero" offset={-175} spy={true} smooth={true} duration={500} >
+        <Link activeClass={estilos.isActive} className="mt-1 block px-2 pt-1 cursor-pointer smd:hover:text-shadowc font-semibold " to="hero" offset={-150} spy={true} smooth={true} duration={500} >
           Inicio
         </Link>
-        <Link activeClass={estilos.isActive} to="about" className="mt-1 block px-2 py-1 cursor-pointer smd:hover:text-shadowc font-semibold  smd:dmt-0 smd:ml-2" offset={-175} spy={true} smooth={true} duration={500} >
+        <Link activeClass={estilos.isActive} to="about" className="mt-1 block px-2 pt-1 cursor-pointer smd:hover:text-shadowc font-semibold  smd:dmt-0 smd:ml-2" offset={-150} spy={true} smooth={true} duration={500} >
           Proyectos
         </Link>
-        <Link activeClass={estilos.isActive} to="contact" className="mt-1 block px-2 py-1 cursor-pointer smd:hover:text-shadowc font-semibold  smd:dmt-0 smd:ml-2" offset={0} spy={true} smooth={true} duration={500} >
+        <Link activeClass={estilos.isActive} to="contact" className="mt-1 block px-2 pt-1 cursor-pointer smd:hover:text-shadowc font-semibold  smd:dmt-0 smd:ml-2" offset={-150} spy={true} smooth={true} duration={500} >
           Contacto
         </Link>
 
