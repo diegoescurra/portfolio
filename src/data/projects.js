@@ -20,20 +20,12 @@ export const projects = [
     },
     {
         id: 3,
-        img: 'https://i.blogs.es/9ad72c/06_mkhdremakeactors01/1366_2000.jpg',
-        title: 'Mortal Kombat',
-        href: 'https://hillsbienesraices.cl/',
-        icon: [],
+        img: '/galeria.png',
+        title: 'Galería de Fotos',
+        href: 'https://unagaleriadefotos.netlify.app/',
+        icon: ['ReactJsIcon'],
         buttontxt: 'Visitar el sitio',
-        description: 'Encargado de crear el juego de Mortal Kombat, algo sencillo',
+        description: 'Una galeria de fotos ocupando la API de Unsplash (recomendado abrir en Chrome)',
     },
-    {
-        id: 4,
-        img: 'https://i.hizliresim.com/uCrrsQ.png',
-        title: 'Mejora Sura Metin2',
-        href: 'https://hillsbienesraices.cl/',
-        icon: [],
-        buttontxt: 'Saquense un metin',
-        description: 'El mejor sura magia negra de cualquier metin2',
-    },
+   
 ];

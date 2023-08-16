@@ -36,26 +36,27 @@ export const Home = () => {
     
     return (
         <>
-            <Layout >
-            <main ref={hero} id="hero" className='flex items-center justify-items-center w-full main '>
+            <Layout className='text-arsenic' >
+            <main ref={hero} id="hero" className='flex items-center justify-items-center w-full h-full main p-4'>
 
 
-                    <div className="flex items-center justify-between w-full h-auto ">
-                        <div className='w-1/2 flex-col hidden smd:block'>
-                            <img ref={img} src='/Software-Developer.png' alt='Diego Escurra' className='w-lg h-auto ' />
-                        </div>
-                        <div ref={text} className='w-full flex flex-col smd:w-1/2'>
-                            <h1 className='text-arsenic text-5xl smd:text-8xl mb-3'>
-                                Hablas Pura Mierda Foley
+                    <div className="w-full h-auto grid grid-cols-1 sxl:grid-cols-2 ">
+                        
+                        <div ref={text} className='w-full flex flex-col justify-center'>
+                            <h1 className='text-5xl smd:text-8xl mb-3 text-center'>
+                                Diego Escurra
                             </h1>
-                            <p className='mb-2 p-1 w-full smd:w-3/4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure mollitia quam maiores rem veniam fugit vero assumenda quae nulla velit quo, doloribus sapiente exercitationem ullam et qui odit. Distinctio, repellendus.</p>
+                            <p className='mb-2 p-1 text-3xl text-center smd:text-end w-full smd:w-3/4'>Desarrollador Full Stack</p>
+                        </div>
+                        <div className='flex-col'>
+                            <img ref={img} src='/Software-Developer.png' alt='Diego Escurra' className='w-lg h-auto ' />
                         </div>
                     </div>
                    
 
                
                 </main>
-            <section ref={about} id="about" className='relative flex items-center text-dark w-full h-full smd:pt-14 pt-4 section'>
+            <section ref={about} id="about" className='flex items-center text-dark w-full h-full smd:pt-14 pt-4'>
                 <About />
             </section>
             {/* 
@@ -63,7 +64,7 @@ export const Home = () => {
                 <Skills/>
             </section>
             */}
-            <section ref={contact} id="contact" className='flex justify-center text-dark  h-full section'>
+            <section ref={contact} id="contact" className='flex justify-center text-dark  h-full '>
                 <Contact />
             </section>
             </Layout>

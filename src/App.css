@@ -7,7 +7,7 @@ section {
 
 
 .main {
-    min-height: 49rem;
+    min-height: 56rem;
 }
 
 @media screen and (max-width: 768px){
