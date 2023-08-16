@@ -26,7 +26,7 @@ export const Home = () => {
             gsap.from(img.current, { opacity: 0, x:-100, duration: 1, ease: "power2.inOut",})
             gsap.from(text.current, { opacity: 0, x:100, duration: 1, ease: "power2.inOut",} )
             gsap.fromTo(about.current,{opacity: 0, y:200},{opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: about.current}})
-            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 2, scrollTrigger: { trigger: contact.current}})
+            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: contact.current}})
         },)
         return () => ctx.revert();
     },[])
@@ -37,7 +37,7 @@ export const Home = () => {
     return (
         <>
             <Layout className='text-arsenic' >
-            <main ref={hero} id="hero" className='flex items-center justify-items-center w-full h-full main p-4'>
+            <main ref={hero} id="hero" className='flex items-center justify-items-center w-full h-screen smd:h-full main p-4'>
 
 
                     <div className="w-full h-auto grid grid-cols-1 sxl:grid-cols-2 ">
