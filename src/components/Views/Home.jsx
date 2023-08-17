@@ -25,7 +25,7 @@ export const Home = () => {
         let ctx = gsap.context(() => {
             gsap.from(img.current, { opacity: 0, x:-100, duration: 1, ease: "power2.inOut",})
             gsap.from(text.current, { opacity: 0, x:100, duration: 1, ease: "power2.inOut",} )
-            gsap.fromTo(about.current,{opacity: 0, y:200},{opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: about.current}})
+            gsap.fromTo(about.current,{opacity: 0, y:200},{opacity: 1, y: 0, duration: 1.5, scrollTrigger: { trigger: about.current}})
             gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: contact.current}})
         },)
         return () => ctx.revert();
@@ -43,10 +43,10 @@ export const Home = () => {
                     <div className="w-full h-auto grid grid-cols-1 sxl:grid-cols-2 ">
                         
                         <div ref={text} className='w-full flex flex-col justify-center'>
-                            <h1 className='text-5xl smd:text-8xl mb-3 text-center'>
+                            <h1 className='text-7xl smd:text-8xl mb-3 text-center smd:text-start'>
                                 Diego Escurra
                             </h1>
-                            <p className='mb-2 p-1 text-3xl text-center smd:text-end w-full smd:w-3/4'>Desarrollador Full Stack</p>
+                            <p className='mb-2 p-2 text-3xl text-center smd:text-start '>Desarrollador Full Stack</p>
                         </div>
                         <div className='flex-col'>
                             <img ref={img} src='/Software-Developer.png' alt='Diego Escurra' className='w-lg h-auto ' />
