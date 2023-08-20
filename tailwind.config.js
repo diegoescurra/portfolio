@@ -22,20 +22,17 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
-      spacing: {
-        xxs: '7rem',
-        xs: '14rem',
-        sm: '21rem',
-        md: '35rem',
-        lg: '56rem',
-        xl: '70rem',
-      },
+      
       colors: {
         'arsenic': '#33434F',
         'shadowc': '#628190',
         'pastel-cyan' : '#A4D8D8',
         'solitude' : '#ECEDEF',
       },
+      height: {
+        '112': '28rem',
+        '128': '32rem',
+      }
     },
   },
   plugins: [],

@@ -14,7 +14,7 @@ export const Contact = () => {
   }
   return (
 
-    <div className="w-lg p-4">
+    <div className="w-5/6 p-4">
       <h2 className='text-arsenic p-4 text-5xl text-center'>Contacto</h2>
       <form onSubmit={handleSubmit} className='bg-white shadow-md rounded px-8'>
         <div className="grid items-center border-b border-pastel-cyan">

@@ -36,26 +36,23 @@ export const Home = () => {
     
     return (
         <>
-            <Layout className='text-arsenic' >
-            <main ref={hero} id="hero" className='flex items-center justify-items-center w-full h-screen smd:h-full main p-4'>
+           <Layout className='text-arsenic' >
+            <main ref={hero} id='hero' className="">
+	<div className="container flex flex-col justify-center p-6 mx-auto ssm:py-12 slg:py-24 slg:flex-row slg:justify-around">
+		<div className="flex items-center justify-center p-6 mt-8 slg:mt-0 h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128">
+			<img src="/Software-Developer.png" alt="" className="object-contain h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128" />
+		</div>
+		<div className="flex flex-col justify-center p-6 text-center rounded-sm slg:max-w-md sxl:max-w-xl slg:text-left ">
+			<h1 className="text-5xl font-bold ssm:text-7xl mb-2">Diego Escurra
+				
+			</h1>
+            <h2 className='text-2xl ssm:text-3xl text-shadowc px-0.5'>Desarrollador Full Stack</h2>
+			<p className="mt-6 mb-8 text-lg ssm:mb-12 italic">“People keep asking me if I’m back. And I really haven’t had an answer. But now, yeah, I’m thinking I’m back!”</p>
+			
+		</div>
+	</div>
+</main>
 
-
-                    <div className="w-full h-auto grid grid-cols-1 sxl:grid-cols-2 ">
-                        
-                        <div ref={text} className='w-full flex flex-col justify-center'>
-                            <h1 className='text-7xl smd:text-8xl mb-3 text-center smd:text-start'>
-                                Diego Escurra
-                            </h1>
-                            <p className='mb-2 p-2 text-3xl text-center smd:text-start '>Desarrollador Full Stack</p>
-                        </div>
-                        <div className='flex-col'>
-                            <img ref={img} src='/Software-Developer.png' alt='Diego Escurra' className='w-lg h-auto ' />
-                        </div>
-                    </div>
-                   
-
-               
-                </main>
             <section ref={about} id="about" className='flex items-center text-dark w-full h-full smd:pt-14 pt-4'>
                 <About />
             </section>
