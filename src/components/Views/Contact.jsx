@@ -19,7 +19,7 @@ export const Contact = () => {
       <h2 className='text-arsenic p-4 text-5xl text-center'>Contacto</h2>
       <div className="relative left-0 top-0">
       
-      <form onSubmit={handleSubmit} className=' bg-white shadow-md rounded px-8'>
+      <form onSubmit={handleSubmit} className='bg-white shadow-md rounded px-8'>
         <div className="grid items-center border-b border-pastel-cyan">
           <div className='my-4'> 
 

@@ -25,7 +25,7 @@ export const Home = () => {
             gsap.from(img.current, { opacity: 0, x:-100, duration: 1, ease: "power2.inOut",})
             gsap.from(text.current, { opacity: 0, x:100, duration: 1, ease: "power2.inOut",} )
             gsap.fromTo(about.current,{opacity: 0, y:200},{opacity: 1, y: 0, duration: 1.5, scrollTrigger: { trigger: about.current}})
-            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: contact.current}})
+            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 1,4, scrollTrigger: { trigger: contact.current}})
         },)
         return () => ctx.revert();
     },[])
@@ -39,9 +39,9 @@ export const Home = () => {
             <main ref={hero} id='hero' className="container flex flex-col justify-center p-6 mx-auto ssm:py-12 slg:py-24 slg:flex-row slg:justify-around">
 	
 		<div className="flex items-center justify-center p-6 mt-8 slg:mt-0 h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128">
-			<img src="/Software-Developer.png" alt="" className="object-contain h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128" />
+			<img ref={img} src="/Software-Developer.png" alt="" className="object-contain h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128" />
 		</div>
-		<div className="flex flex-col justify-center p-6 text-center rounded-sm slg:max-w-md sxl:max-w-xl slg:text-left ">
+		<div ref={text} className="flex flex-col justify-center p-6 text-center rounded-sm slg:max-w-md sxl:max-w-xl slg:text-left ">
 			<h1 className="text-5xl font-bold ssm:text-7xl mb-2">Diego Escurra
 				
 			</h1>
