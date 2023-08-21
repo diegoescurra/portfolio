@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Layout } from '../Layout';
+import { ContactSvg } from '../Icons';
 
 export const Contact = () => {
   const [state, handleSubmit] = useForm("xaygqawn");
@@ -8,7 +9,7 @@ export const Contact = () => {
     return (
       <div className="h-11">
 
-        <p className='text-arsenic text-4x1'>Gracias por tu mensaje</p>
+        <p className='text-arsenic text-4x1 mb-4'>Gracias por tu mensaje</p>
       </div>
     );
   }
@@ -16,7 +17,9 @@ export const Contact = () => {
 
     <div className="w-5/6 p-4">
       <h2 className='text-arsenic p-4 text-5xl text-center'>Contacto</h2>
-      <form onSubmit={handleSubmit} className='bg-white shadow-md rounded px-8'>
+      <div className="relative left-0 top-0">
+      
+      <form onSubmit={handleSubmit} className=' bg-white shadow-md rounded px-8'>
         <div className="grid items-center border-b border-pastel-cyan">
           <div className='my-4'> 
 
@@ -72,6 +75,8 @@ export const Contact = () => {
         </div>
 
       </form>
+      
+      </div>
     </div>
   );
 }

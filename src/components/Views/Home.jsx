@@ -3,7 +3,6 @@ import { Layout } from '../Layout'
 import { About } from './About'
 import { Contact } from './Contact'
 import { Footer } from '../shareds/footer/Footer'
-import { Skills } from './Skills'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
@@ -56,11 +55,7 @@ export const Home = () => {
             <section ref={about} id="about" className='flex items-center text-dark w-full h-full smd:pt-14 pt-4'>
                 <About />
             </section>
-            {/* 
-            <section id='skills' className='flex items-center w-full  section'>
-                <Skills/>
-            </section>
-            */}
+           
             <section ref={contact} id="contact" className='flex justify-center text-dark  h-full '>
                 <Contact />
             </section>
