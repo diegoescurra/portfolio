@@ -37,8 +37,8 @@ export const Home = () => {
     return (
         <>
            <Layout className='text-arsenic' >
-            <main ref={hero} id='hero' className="">
-	<div className="container flex flex-col justify-center p-6 mx-auto ssm:py-12 slg:py-24 slg:flex-row slg:justify-around">
+            <main ref={hero} id='hero' className="container flex flex-col justify-center p-6 mx-auto ssm:py-12 slg:py-24 slg:flex-row slg:justify-around">
+	
 		<div className="flex items-center justify-center p-6 mt-8 slg:mt-0 h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128">
 			<img src="/Software-Developer.png" alt="" className="object-contain h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128" />
 		</div>
@@ -50,7 +50,7 @@ export const Home = () => {
 			<p className="mt-6 mb-8 text-lg ssm:mb-12 italic">“People keep asking me if I’m back. And I really haven’t had an answer. But now, yeah, I’m thinking I’m back!”</p>
 			
 		</div>
-	</div>
+
 </main>
 
             <section ref={about} id="about" className='flex items-center text-dark w-full h-full smd:pt-14 pt-4'>
