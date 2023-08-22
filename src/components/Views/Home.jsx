@@ -25,7 +25,7 @@ export const Home = () => {
             gsap.from(img.current, { opacity: 0, x:-100, duration: 1, ease: "power2.inOut",})
             gsap.from(text.current, { opacity: 0, x:100, duration: 1, ease: "power2.inOut",} )
             gsap.fromTo(about.current,{opacity: 0, y:200},{opacity: 1, y: 0, duration: 1.5, scrollTrigger: { trigger: about.current}})
-            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 1,4, scrollTrigger: { trigger: contact.current}})
+            gsap.fromTo(contact.current,{opacity: 0, x:-2200},{opacity: 1, x: 0, duration: 1, scrollTrigger: { trigger: contact.current}})
         },)
         return () => ctx.revert();
     },[])
