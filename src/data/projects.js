@@ -25,7 +25,16 @@ export const projects = [
         href: 'https://unagaleriadefotos.netlify.app/',
         icon: ['ReactJsIcon'],
         buttontxt: 'Visitar el sitio',
-        description: 'Una galeria de fotos ocupando la API de Unsplash (recomendado abrir en Chrome)',
+        description: 'Una galeria de fotos ocupando la API de Unsplash',
+    },
+    {
+        id: 4,
+        img: '/tienda.png',
+        title: 'Random Store',
+        href: 'https://ramdomstore.netlify.app/',
+        icon: ['ReactJsIcon'],
+        buttontxt: 'Visitar el sitio',
+        description: 'Un carrito de compra implementado en React y Tailwind para una experiencia de compra interactiva ',
     },
    
 ];
