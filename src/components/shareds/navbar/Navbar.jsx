@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { LinkedinIcon, GithubIcon } from "../../Icons";
 import estilos from "./navbar.module.css";
 import { Link } from "react-scroll";
@@ -24,6 +24,8 @@ export const Navbar = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
 
   return (
     <header
@@ -81,7 +83,7 @@ export const Navbar = () => {
           activeClass={estilos.isActive}
           to="hero"
           className="block cursor-pointer smd:hover:text-shadowc font-semibold smd:dmt-0 smd:ml-2  "
-          offset={-150}
+          offset={-200}
           spy={true}
           smooth={true}
           duration={700}
@@ -93,7 +95,7 @@ export const Navbar = () => {
           activeClass={estilos.isActive}
           to="about"
           className="block cursor-pointer smd:hover:text-shadowc font-semibold  smd:dmt-0 smd:ml-2"
-          offset={-150}
+          offset={-200}
           spy={true}
           smooth={true}
           duration={700}
@@ -105,7 +107,7 @@ export const Navbar = () => {
           activeClass={estilos.isActive}
           to="contact"
           className="block cursor-pointer smd:hover:text-shadowc font-semibold  smd:dmt-0 smd:ml-2"
-          offset={-150}
+          offset={-200}
           spy={true}
           smooth={true}
           duration={700}

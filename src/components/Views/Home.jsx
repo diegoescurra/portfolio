@@ -56,11 +56,11 @@ export const Home = () => {
 
   return (
     <>
-      <Layout className="text-arsenic ">
-        <main
+      <Layout >
+      <main
           ref={hero}
           id="hero"
-          className="container flex flex-col justify-center p-6 mx-7 ssm:py-12 slg:py-24 slg:flex-row slg:justify-around "
+          className="container flex flex-col justify-center p-6 ssm:py-12 slg:py-24 slg:flex-row slg:justify-around "
         >
           <div className="flex items-center justify-center p-6 mt-8 slg:mt-0 h-72 ssm:h-80 slg:h-96 sxl:h-112 2xl:h-128">
             <img
@@ -87,10 +87,10 @@ export const Home = () => {
           </div>
         </main>
 
+        
         <section ref={about} id="about" >
           <About />
         </section>
-
         <section
           ref={contact}
           id="contact"
