@@ -1,13 +1,12 @@
 import React from 'react'
 import estilos from './card.module.css';
-import { LinkedinIcon, GithubIcon, NodeJSIcon, JavaScriptIcon, ReactJsIcon, MySQLIcon, PostgreSQLIcon, JQueryIcon } from '../Icons';
+import { NodeJSIcon, JavaScriptIcon, ReactJsIcon, MySQLIcon, PostgreSQLIcon, JQueryIcon } from '../Icons';
 
 
 export const Cards = ( props ) => {
 
   const iconComponents = {
-    GithubIcon,
-    LinkedinIcon,
+  
     NodeJSIcon,
     JavaScriptIcon,
     JQueryIcon,
@@ -34,7 +33,7 @@ export const Cards = ( props ) => {
         <p>
           {props.description}
         </p>
-        <a target='_blank' href={props.href}>{props.buttontxt}</a>
+        <a target='_blank' href={props.href} rel='noreferrer'>{props.buttontxt}</a>
       </div>
     </div>
 

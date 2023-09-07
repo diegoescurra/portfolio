@@ -15,7 +15,7 @@ export const Contact = () => {
   }
   return (
 
-    <div className="w-5/6 p-4">
+    <div className="w-5/6 p-4 ">
       <h2 className='text-arsenic p-4 text-5xl text-center'>Contacto</h2>
       <div className="relative left-0 top-0">
       

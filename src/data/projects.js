@@ -36,5 +36,6 @@ export const projects = [
         buttontxt: 'Visitar el sitio',
         description: 'Un carrito de compra implementado en React y Tailwind para una experiencia de compra interactiva ',
     },
+
    
 ];
