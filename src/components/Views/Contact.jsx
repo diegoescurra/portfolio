@@ -14,7 +14,7 @@ export const Contact = () => {
 
     <section id='contact' className="w-full">
       <div className='w-full'>
-      <h2 className='text-arsenic p-4 mb-4 text-5xl text-center'>Contacto</h2>
+      <h2 className='text-arsenic p-4 mb-4 text-5xl text-center font-light tracking-widest'>CONTACTO</h2>
       <div className="relative left-0 top-0">
       
       <form onSubmit={handleSubmit} className='bg-white shadow-md rounded p-4'>

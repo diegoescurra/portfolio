@@ -31,15 +31,15 @@ export const Navbar = () => {
 
   return (
     <header>
-      <nav id="navbar" className="navbar">
+      <nav id="navbar" className="navbar tracking-wider">
      
       <a data-scroll="home" href="#home" className={activeSection === "home" ? "active" : ""}>
        
-        Home
+        Inicio
       </a>
-      <a data-scroll="about" href="#about" className={activeSection === "about" ? "active" : ""}>
+      <a data-scroll="portfolio" href="#portfolio" className={activeSection === "portfolio" ? "active" : ""}>
        
-        About
+        Portafolio
       </a>
      
       <a data-scroll="contact" href="#contact" className={activeSection === "contact" ? "active" : ""}>
