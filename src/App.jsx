@@ -1,12 +1,15 @@
 import './App.css'
-
-import { AppRouter } from './router/AppRouter'
+import { Home } from './components/Views/Home'
+import {Navbar} from './components/shareds/navbar/Navbar'
+import {Footer} from './components/shareds/footer/Footer'
 
 function App() {
 
   return (
     <>
-      <AppRouter />
+    <Navbar />
+      <Home />
+      <Footer />
     </>
   )
 }

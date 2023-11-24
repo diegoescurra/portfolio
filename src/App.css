@@ -14,5 +14,5 @@ section {
 }
 
 .active {
-    color: #8f44fd;
+    @apply text-pastel-cyan
   }

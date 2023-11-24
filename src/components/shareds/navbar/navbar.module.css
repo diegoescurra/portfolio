@@ -13,10 +13,11 @@ nav {
   gap: 16px;
   padding: 0 20px;
   width: 100%;
+  background-color: #fff;
   height: 72px;
-  background: #ffffff;
   box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-}
+  /* @apply bg-gradient-to-r  from-arsenic to-shadowc text-solitude*/
+} 
 
 nav a {
   color: inherit;
