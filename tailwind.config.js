@@ -6,16 +6,16 @@ export default {
   ],
   theme: {
     screens: {
-      'ssm': '640px',
+      'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
-      'smd': '768px',
+      'md': '768px',
       // => @media (min-width: 768px) { ... }
 
-      'slg': '1024px',
+      'lg': '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      'sxl': '1280px',
+      'xl': '1280px',
       // => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',
@@ -32,7 +32,11 @@ export default {
       height: {
         '112': '28rem',
         '128': '32rem',
+      },
+      fontFamily: {
+        'roboto' : 'Roboto, sans-serif'
       }
+      
     },
   },
   plugins: [],

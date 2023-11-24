@@ -7,7 +7,7 @@ export const projects = [
         href: 'https://hillsbienesraices.cl/',
         icon: ['NodeJSIcon', 'JQueryIcon', 'MySQLIcon'] ,
         buttontxt: 'Visitar el sitio',
-        description: 'Sitio web de la agencia Hills Bienes Raíces, proyecto realizado como freelance.',
+        description: 'Diseño y desarrollo del sitio web para la agencia inmobiliaria Hills Bienes Raíces. Proyecto freelance.',
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ export const projects = [
         href: 'https://github.com/Sie7he/academiaX',
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],
         buttontxt: 'Visitar Repositorio',
-        description: 'Una aplicación CRUD donde un usuario puede registrar sus metas diarias, semanales o mensuales.',
+        description: 'Aplicación interactiva CRUD para el registro y seguimiento de metas diarias, semanales y mensuales.',
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ export const projects = [
         href: 'https://unagaleriadefotos.netlify.app/',
         icon: ['ReactJsIcon'],
         buttontxt: 'Visitar el sitio',
-        description: 'Una galeria de fotos ocupando la API de Unsplash',
+        description: 'Galería de imágenes integrada con la API de Unsplash, mostrando fotografías de alta calidad.',
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ export const projects = [
         href: 'https://ramdomstore.netlify.app/',
         icon: ['ReactJsIcon'],
         buttontxt: 'Visitar el sitio',
-        description: 'Un carrito de compra implementado en React y Tailwind para una experiencia de compra interactiva ',
+        description: 'Plataforma de comercio electrónico construida con React y estilizada con Tailwind, ofreciendo una experiencia de compra dinámica. ',
     },
 
    

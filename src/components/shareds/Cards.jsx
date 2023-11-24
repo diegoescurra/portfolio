@@ -22,7 +22,7 @@ export const Cards = ( props ) => {
       <img src={props.img} />
       <div>
         <h2>{props.title}</h2>
-        <div className='flex justify-center smd:justify-start'>
+        <div className='flex justify-center md:justify-start'>
           
         {props.icon.map((iconName, index) => {      
         const IconComponent = iconComponents[iconName];

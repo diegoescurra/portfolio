@@ -1,18 +1,18 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
 html {
     @apply bg-gradient-to-r from-solitude to-purple-50 scroll-smooth;
+    font-family: 'Roboto', sans-serif;
 }
 section {
-    min-height: 49rem;
+    min-height: 100vh;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-
-.main {
-    min-height: 56rem;
-}
-
-@media screen and (max-width: 768px){
-    
-.main {
-    min-height: 28rem;
-}
-}
+.active {
+    color: #8f44fd;
+  }

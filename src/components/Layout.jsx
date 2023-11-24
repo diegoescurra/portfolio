@@ -1,9 +1,9 @@
-import React from 'react'
-
-export const Layout = ({children, className}) => {
+export const Layout = ({ children }) => {
   return (
-    <div className={` w-full h-full smd:px-28 text-arsenic ${className}`}>
-        {children}
-    </div>
-  )
-}
+    <main className="w-full h-full m-auto text-arsenic relative ">
+
+
+      {children}
+    </main>
+  );
+};
