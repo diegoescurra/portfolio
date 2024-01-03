@@ -5,7 +5,7 @@ export const Projects = () => {
   return (
     <section className="w-full">
       <div className="w-full">
-        <h3 className="text-shadowc p-4 mb-4 text-2xl lg:text-4xl text-center tracking-widest">Otros Proyectos...</h3>
+        <h3 className="text-shadowc p-4 mb-4 text-2xl lg:text-4xl text-center tracking-widest">Otros Proyectos</h3>
         <div className="grid grid-cols-1 gap-16 justify-center w-full lg:grid-cols-2">
           {projects.map((card) => (
             <div className="flex justify-center" key={card.id}>
