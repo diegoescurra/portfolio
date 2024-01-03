@@ -13,6 +13,8 @@ section {
     overflow: hidden;
 }
 
-.active {
-    @apply text-pastel-cyan
+
+  .light-circle {
+    @apply pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute;
+
   }

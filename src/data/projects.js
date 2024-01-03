@@ -1,14 +1,6 @@
 
 export const projects = [
-    {
-        id: 1,
-        img: '/Hills.png',
-        title: 'Hills Bienes Raíces',
-        href: 'https://hillsbienesraices.cl/',
-        icon: ['NodeJSIcon', 'JQueryIcon', 'MySQLIcon'] ,
-        buttontxt: 'Visitar el sitio',
-        description: 'Diseño y desarrollo del sitio web para la agencia inmobiliaria Hills Bienes Raíces. Proyecto freelance.',
-    },
+
     {
         id: 2,
         img: '/metas.png',

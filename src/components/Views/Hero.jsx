@@ -11,10 +11,10 @@ export const Hero = () => {
             <h1 className="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl text-shadowc">Hola, mi nombre es Diego Escurra</h1>
             <p className="max-w-2xl mb-6 font-light text-arsenic lg:mb-8 md:text-lg lg:text-xl "> <strong>Ingeniero Informático y desarrollador Full Stack </strong> especializado en la creación de aplicaciones web intuitivas y eficientes.</p>
             <div className='flex gap-4 w-full h-14 '>
-            <a className='h-7 w-7' target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/diego-escurra-6978651ba/'>
+            <a className='h-10 w-10' target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/diego-escurra-6978651ba/'>
               <LinkedinIcon />
             </a>
-            <a className='h-7 w-7' target='_blank' rel='noreferrer' href='https://github.com/Sie7he'>
+            <a className='h-10 w-10' target='_blank' rel='noreferrer' href='https://github.com/Sie7he'>
               <GithubIcon />
             </a>
             </div>
