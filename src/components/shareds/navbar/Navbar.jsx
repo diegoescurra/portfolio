@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import './navbar.module.css'
+import { useEffect} from 'react';
+import './navbar.css'
 
 
 export const Navbar = () => {
-
-  const [activeSection, setActiveSection] = useState(null);
+  let lastScrollTop = 0;
 
   
   
   const handleScroll = () => {
+    const navbar = document.querySelector('#navbar')
     const scrollY = window.scrollY;
-    const sections = document.querySelectorAll("section");
+    console.log(navbar)
+    if(scrollY > lastScrollTop) {
+      navbar.classList.remove('visible')
+    } else if (scrollY < lastScrollTop){
+      navbar.classList.add('visible')
 
-    sections.forEach((section) => {
-      const { id, offsetTop, clientHeight } = section;
-      const offset = offsetTop - 1;
-
-      if (scrollY >= offset && scrollY < offset + clientHeight) {
-        setActiveSection(id);
-      }
-    });
-  };
+    }
+    lastScrollTop = scrollY <= 0 ? 0 : scrollY;  
+  
+  }
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", handleScroll, {passive: true});
 
     return () => {
       document.removeEventListener("scroll", handleScroll);
@@ -31,18 +30,18 @@ export const Navbar = () => {
 
   return (
     <header>
-      <nav id="navbar" className="navbar tracking-wider">
+      <nav id="navbar" className='visible'>
      
-      <a data-scroll="home" href="#home" className={activeSection === "home" ? "active" : ""}>
+      <a data-scroll="home" href="#home" >
        
         Inicio
       </a>
-      <a data-scroll="portfolio" href="#portfolio" className={activeSection === "portfolio" ? "active" : ""}>
+      <a data-scroll="portfolio" href="#portfolio">
        
         Portafolio
       </a>
      
-      <a data-scroll="contact" href="#contact" className={activeSection === "contact" ? "active" : ""}>
+      <a data-scroll="contact" href="#contact">
         
         Contacto
       </a>
