@@ -4,7 +4,7 @@ import { GithubIcon, LinkedinIcon } from '../Icons'
 export const Hero = () => {
   return (
 <section className="flex items-center relative" id="home">
-<div className="absolute h-56 w-56 bg-pastel-cyan rounded-full top-0 -left-16"></div>
+<div className="absolute h-28 w-28 bg-pastel-cyan rounded-full top-0 -left-16"></div>
 
     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
@@ -24,7 +24,7 @@ export const Hero = () => {
             <img src="Software-Developer.png" alt="mockup" />
         </div>                
     </div>
-    <div className="absolute h-56 w-56 bg-pastel-cyan rounded-full bottom-0 -right-32"></div>
+    <div className="absolute h-44 w-56 bg-pastel-cyan rounded-full bottom-0 -right-32"></div>
 
 </section>
   )

@@ -50,7 +50,7 @@
     border-radius: 40px;
   }
   
-  @media (width <= 740px) {
+  @media screen and ( max-width : 768px) {
     .card {
       
       padding-left: 1rem;
