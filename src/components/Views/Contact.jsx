@@ -14,7 +14,7 @@ export const Contact = () => {
 
     <section id='contact' className="w-full">
       <div className='w-full'>
-      <h2 className='text-arsenic p-4 mb-4 lg:text-5xl text-center text-3xl font-light tracking-widest'>CONTACTO</h2>
+      <h2 className='text-shadowc p-4 mb-4 lg:text-5xl text-center text-3xl  tracking-widest'>CONTACTO</h2>
       <div className="relative left-0 top-0">
       
       <form onSubmit={handleSubmit} className='bg-white shadow-md rounded p-4'>
@@ -67,7 +67,7 @@ export const Contact = () => {
         />
         <div className='my-7 flex justify-end'>
 
-          <button type="submit" className='flex-shrink-0 bg-shadowc hover:bg-arsenic border-shadowc hover:border-arsenic text-sm border-4 text-white py-1 px-2 mb-4 rounded' disabled={state.submitting}>
+          <button type="submit" className='w-full font-bold bg-shadowc hover:bg-arsenic border-shadowc hover:border-arsenic text-sm border-4 text-white py-1 px-2 mb-4 rounded' disabled={state.submitting}>
             Enviar
           </button>
         </div>

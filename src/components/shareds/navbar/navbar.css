@@ -4,7 +4,7 @@ header {
 }
 
 nav {
-  @apply bg-gradient-to-r from-shadowc to-pastel-cyan fixed top-0 left-0 flex items-center justify-center gap-5 w-full h-[72px] text-white;
+  @apply bg-gradient-to-r from-transparent to-shadowc fixed top-0 left-0 flex items-center justify-center gap-5 w-full h-[72px] text-white;
 
 
   padding: 0 20px;
@@ -24,6 +24,10 @@ nav a {
   transition: 0.3s;
   font-size: 16px;
   font-weight: 600;
+}
+
+nav a:hover {
+  color: #33434F
 }
 
 nav span {
