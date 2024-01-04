@@ -49,8 +49,8 @@ export const Work = () => {
               </a>
             </div>
           </div>
-          <div className="hidden lg:block lg:col-span-1 items-center">
-            <div className="border-r-2 py-4 border-arsenic h-5/6"></div>
+          <div className="hidden lg:block lg:col-span-1 py-14 items-center">
+            <div className="border-r-2  border-shadowc h-5/6"></div>
           </div>
           <div className="col-span-1 lg:col-span-4 flex flex-col justify-center p-4">
             <h2 className="text-2xl lg:text-4xl mb-1 text-arsenic font-light">
