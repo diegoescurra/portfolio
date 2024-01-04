@@ -27,6 +27,7 @@ export const Contact = () => {
               name='name'
               type="text"
               placeholder="Jane Doe"
+              required
             />
           </div>
           <ValidationError 
@@ -42,6 +43,7 @@ export const Contact = () => {
               name='email'
               type="email"
               placeholder="janedoe@blindspot.com"
+              required
             />
           </div>
         </div>
@@ -57,6 +59,7 @@ export const Contact = () => {
               id="message"
               name="message"
               placeholder="Mensaje"
+              required
             />
           </div>
         </div>
