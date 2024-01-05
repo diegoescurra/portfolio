@@ -9,7 +9,7 @@ export const Hero = () => {
     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl text-shadowc">Hola, mi nombre es Diego Escurra</h1>
-            <p className="max-w-[35rem] mb-6 font-light text-arsenic lg:mb-8 md:text-lg lg:text-xl "> <strong>Ingeniero Informático y desarrollador Full Stack </strong> especializado en la creación de aplicaciones web intuitivas y eficientes.</p>
+            <p className="max-w-[35rem] mb-6 font-light text-arsenic lg:mb-8 md:text-lg lg:text-xl "><strong>Ingeniero Informático </strong>con conocimientos en <strong>Desarrollo Web Full Stack y Análisis de Sistemas</strong>. Capaz de aprender rápidamente, trabajar en equipo y aportar en proyectos tecnológicos. </p>
             <div className='flex gap-4 w-full h-14 '>
             <a className='h-10 w-10' target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/diego-escurra-6978651ba/'>
               <LinkedinIcon />
