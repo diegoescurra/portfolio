@@ -5,9 +5,9 @@ export const projects = [
         id: 1,
         img: '/Admin panel.png',
         title: 'Panel de administración',
-        href: '',
+        href: 'https://github.com/Sie7he/admin_panel',
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],
-        buttontxt: 'En proceso...',
+        buttontxt: 'Ver Repositorio',
         description: 'CRUD para panel de administración usando tecnologías como v0.dev para el diseño y render.com para hosting.',
     },
     {
@@ -34,7 +34,7 @@ export const projects = [
         title: 'Metas app',
         href: 'https://github.com/Sie7he/academiaX',
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],
-        buttontxt: 'Visitar Repositorio',
+        buttontxt: 'Ver Repositorio',
         description: 'Aplicación interactiva CRUD para el registro y seguimiento de metas diarias, semanales y mensuales (Proyecto de AcademiaX).',
     },
 

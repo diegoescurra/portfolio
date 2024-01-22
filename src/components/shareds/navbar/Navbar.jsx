@@ -10,7 +10,6 @@ export const Navbar = () => {
   const handleScroll = () => {
     const navbar = document.querySelector('#navbar')
     const scrollY = window.scrollY;
-    console.log(navbar)
     if(scrollY > lastScrollTop) {
       navbar.classList.remove('visible')
     } else if (scrollY < lastScrollTop){
