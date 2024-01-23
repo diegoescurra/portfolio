@@ -5,9 +5,11 @@ export const projects = [
         id: 1,
         img: '/Admin panel.png',
         title: 'Panel de administración',
-        href: 'https://github.com/Sie7he/admin_panel',
+        href: 'https://panel-cliente.onrender.com/',
+        href2: 'https://github.com/Sie7he/admin_panel',
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],
-        buttontxt: 'Ver Repositorio',
+        buttontxt: 'Ver Sitio',
+        buttontxt2 : 'Ver Repositorio',
         description: 'CRUD para panel de administración usando tecnologías como v0.dev para el diseño y render.com para hosting.',
     },
     {

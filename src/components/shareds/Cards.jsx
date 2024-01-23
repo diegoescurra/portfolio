@@ -33,7 +33,10 @@ export const Cards = ( props ) => {
         <p>
           {props.description}
         </p>
+        <div className='flex gap-4 justify-center lg:justify-normal'>
         <a target='_blank' href={props.href} rel='noreferrer'>{props.buttontxt}</a>
+        {props.href2 && <a target='_blank' href={props.href2} rel='noreferrer'>{props.buttontxt2}</a>}
+        </div>
       </div>
     </div>
 

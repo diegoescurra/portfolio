@@ -53,9 +53,9 @@ export const Work = () => {
             <div className="border-r-2  border-shadowc h-5/6"></div>
           </div>
           <div className="col-span-1 lg:col-span-4 flex flex-col justify-center p-4">
-            <h2 className="text-2xl lg:text-4xl mb-1 text-arsenic font-light">
+            <a className="text-2xl lg:text-4xl mb-1 text-arsenic font-light" href="https://hillsbienesraices.cl">
               Sitio Web Hills Bienes Raíces.
-            </h2>
+            </a>
             <p className="font-light italic">Proyecto Freelance</p>
             <p className="my-4 text-sm lg:text-base">
             Diseño e implementación del sitio web para Hills Bienes Raíces, una agencia con más de 20 años en el mercado de bienes raíces, especializada en ofrecer una experiencia personalizada en la compra y venta de propiedades.
