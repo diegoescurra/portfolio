@@ -14,24 +14,24 @@ export const Work = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-screen-xl">
           <div className="col-span-1 lg:col-span-7">
             <a
-              href="https://hillsbienesraices.cl/"
+              href="https://altomontebienesraices.com/"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="/Hills.png"
+                src="/Altomonte_home.png"
                 alt="Imagen principal"
                 className="w-full h-auto object-cover rounded-lg mb-4"
               />
             </a>
             <div className="grid grid-cols-2 gap-4">
               <a
-                href="https://hillsbienesraices.cl/buscar_propiedades"
+                href="https://altomontebienesraices.com/propiedades"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img
-                  src="/hills2.png"
+                  src="/Altomonte_propiedades.png"
                   alt="Imagen secundaria 1"
                   className="w-full h-auto object-cover rounded-lg"
                 />
@@ -42,7 +42,7 @@ export const Work = () => {
                 rel="noreferrer"
               >
                 <img
-                  src="/hills3.png"
+                  src="/Altomonte_propiedad.png"
                   alt="Imagen secundaria 2"
                   className="w-full h-auto object-cover rounded-lg"
                 />
@@ -53,12 +53,12 @@ export const Work = () => {
             <div className="border-r-2  border-shadowc h-5/6"></div>
           </div>
           <div className="col-span-1 lg:col-span-4 flex flex-col justify-center p-4">
-            <a className="text-2xl lg:text-4xl mb-1 text-arsenic font-light" href="https://hillsbienesraices.cl">
-              Sitio Web Hills Bienes Raíces.
+            <a className="text-2xl lg:text-4xl mb-1 text-arsenic font-light" href="https://altomontebienesraices.com">
+              Sitio Web Altomonte Bienes Raíces.
             </a>
             <p className="font-light italic">Proyecto Freelance</p>
             <p className="my-4 text-sm lg:text-base">
-            Diseño e implementación del sitio web para Hills Bienes Raíces, una agencia con más de 20 años en el mercado de bienes raíces, especializada en ofrecer una experiencia personalizada en la compra y venta de propiedades.
+            Diseño e implementación del sitio web para Altomonte Bienes Raíces, una agencia con más de 20 años en el mercado de bienes raíces, especializada en ofrecer una experiencia personalizada en la compra y venta de propiedades.
             </p>
             <div className="flex justify-between gap-4 w-56">
               <JQueryIcon />

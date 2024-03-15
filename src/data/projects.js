@@ -14,6 +14,13 @@ export const projects = [
     },
     {
         id: 2,
+        img: '/Hills.png',
+        title: 'Hills Bienes Raíces',
+        icon: ['NodeJSIcon', 'MySQLIcon', 'JQueryIcon'],
+        description: 'Anterior sitio de Altomonte Bienes Raíces',
+    },
+    {
+        id: 3,
         img: '/galeria.png',
         title: 'Galería de Fotos',
         href: 'https://unagaleriadefotos.netlify.app/',
@@ -22,7 +29,7 @@ export const projects = [
         description: 'Galería de imágenes integrada con la API de Unsplash, mostrando fotografías de alta calidad.',
     },
     {
-        id: 3,
+        id: 4,
         img: '/tienda.png',
         title: 'Random Store',
         href: 'https://ramdomstore.netlify.app/',
@@ -31,7 +38,7 @@ export const projects = [
         description: 'Plataforma de comercio electrónico construida con React y estilizada con Tailwind, ofreciendo una experiencia de compra dinámica. ',
     },
     {
-        id: 4,
+        id: 5,
         img: '/metas.png',
         title: 'Metas app',
         href: 'https://github.com/Sie7he/academiaX',
