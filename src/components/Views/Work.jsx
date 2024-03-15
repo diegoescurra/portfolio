@@ -37,7 +37,7 @@ export const Work = () => {
                 />
               </a>
               <a
-                href="https://hillsbienesraices.cl/propiedades/edificio-tantum"
+                href="https://altomontebienesraices.com/propiedad/101"
                 target="_blank"
                 rel="noreferrer"
               >
