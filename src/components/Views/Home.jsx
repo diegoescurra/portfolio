@@ -4,6 +4,8 @@ import { Contact } from "./Contact";
 import { Hero } from "./Hero";
 import { Work } from "./Work";
 import { useEffect, useState } from "react";
+import About from "./About";
+import Certificates from "./Certificates";
 
 export const Home = () => {
 
@@ -34,8 +36,10 @@ export const Home = () => {
         }}
       />
       <Hero />
+      {/* <About /> */}
       <Work />
       <Projects />
+      <Certificates />
       <Contact />
     </Layout>
   );
