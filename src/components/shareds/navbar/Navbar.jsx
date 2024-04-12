@@ -39,7 +39,10 @@ export const Navbar = () => {
        
         Portafolio
       </a>
-     
+      <a data-scroll="certificates" href="#certificates">
+        
+        Certificados
+      </a>
       <a data-scroll="contact" href="#contact">
         
         Contacto

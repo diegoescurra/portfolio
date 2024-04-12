@@ -4,7 +4,7 @@ export const Work = () => {
   return (
     <section
       id="portfolio"
-      className="bg-[#ecf0f1] text-[#333] w-full  mx-auto px-4"
+      className="bg-[#ecf0f1] text-[#333] w-full mx-auto px-4 py-10 relative"
     >
       <div>
         <h2 className="text-shadowc pb-4 mb-14 lg:text-5xl text-center text-3xl  tracking-widest">
@@ -68,6 +68,8 @@ export const Work = () => {
           </div>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-b from-solitude to-purple-50"></div>
+
     </section>
   );
 };
