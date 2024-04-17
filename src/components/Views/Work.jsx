@@ -1,4 +1,4 @@
-import { JQueryIcon, MySQLIcon, NodeJSIcon } from "../Icons";
+import { JQueryIcon, MySQLIcon, NodeJSIcon, ReactJsIcon } from "../Icons";
 
 export const Work = () => {
   return (
@@ -61,7 +61,7 @@ export const Work = () => {
             Diseño e implementación del sitio web para Altomonte Bienes Raíces, una agencia con más de 20 años en el mercado de bienes raíces, especializada en ofrecer una experiencia personalizada en la compra y venta de propiedades.
             </p>
             <div className="flex justify-between gap-4 w-56">
-              <JQueryIcon />
+              <ReactJsIcon />
               <MySQLIcon />
               <NodeJSIcon />
             </div>
