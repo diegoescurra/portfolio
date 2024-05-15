@@ -29,7 +29,7 @@ export const Home = () => {
   return (
     <Layout>
      <div
-        className="light-circle"
+        className="light-circle hidden lg:block"
 
         style={{
           backgroundColor:'transparent',
