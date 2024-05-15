@@ -4,7 +4,6 @@ import { Contact } from "./Contact";
 import { Hero } from "./Hero";
 import { Work } from "./Work";
 import { useEffect, useState } from "react";
-import About from "./About";
 import Certificates from "./Certificates";
 
 export const Home = () => {
@@ -31,12 +30,19 @@ export const Home = () => {
     <Layout>
      <div
         className="light-circle"
+
         style={{
-          background: `radial-gradient(700px at ${cursorPos.x}px ${cursorPos.y}px, rgba(164, 216, 216, 0.28), transparent 70%)`
+          backgroundColor:'transparent',
+          top: `${cursorPos.y}px`,
+          left: `${cursorPos.x}px`,
+          width: '35px',
+          height: '35px',
+          borderRadius: '50%',
+          border: '3px solid #14213D',
+          opacity: '.35'
         }}
       />
       <Hero />
-      {/* <About /> */}
       <Work />
       <Projects />
       <Certificates />

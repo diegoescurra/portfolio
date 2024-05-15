@@ -17,3 +17,30 @@ section {
     @apply pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute;
 
   }
+
+  .skills-slide {
+    @apply animate-slide w-full
+
+  }
+  .skills-slide-inverse {
+    @apply animate-slideInverse w-full
+
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(-100%); /* Comienza fuera de la pantalla por la izquierda */
+    }
+    to {
+      transform: translateX(110%); /* Se mueve hacia la derecha hasta salir completamente de la pantalla */
+    }
+}
+
+@keyframes slideInverse {
+  from {
+    transform: translateX(100%); /* Comienza fuera de la pantalla por la derecha */
+  }
+  to {
+    transform: translateX(-100%); /* Se mueve hacia la izquierda hasta salir completamente de la pantalla */
+  }
+}

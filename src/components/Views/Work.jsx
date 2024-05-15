@@ -1,4 +1,4 @@
-import { JQueryIcon, MySQLIcon, NodeJSIcon, ReactJsIcon } from "../Icons";
+import {  MySQLIcon, NodeJSIcon, ReactJsIcon } from "../Icons";
 
 export const Work = () => {
   return (
@@ -26,23 +26,23 @@ export const Work = () => {
             </a>
             <div className="grid grid-cols-2 gap-4">
               <a
-                href="https://altomontebienesraices.com/propiedades"
+                href="https://altomontebienesraices.com/propiedad/100"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img
-                  src="/Altomonte_propiedades.png"
+                  src="/altomonte_note.png"
                   alt="Imagen secundaria 1"
                   className="w-full h-auto object-cover rounded-lg"
                 />
               </a>
               <a
-                href="https://altomontebienesraices.com/propiedad/101"
+                href="https://altomontebienesraices.com/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img
-                  src="/Altomonte_propiedad.png"
+                  src="/altomonte_phones.png"
                   alt="Imagen secundaria 2"
                   className="w-full h-auto object-cover rounded-lg"
                 />

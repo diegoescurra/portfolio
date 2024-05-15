@@ -1,6 +1,6 @@
 import React from 'react'
 import estilos from './card.module.css';
-import { NodeJSIcon, JavaScriptIcon, ReactJsIcon, MySQLIcon, PostgreSQLIcon, JQueryIcon } from '../Icons';
+import { NodeJSIcon, JavaScriptIcon, ReactJsIcon, MySQLIcon, PostgreSQLIcon, JQueryIcon, GithubIcon } from '../Icons';
 
 
 export const Cards = ( props ) => {
@@ -19,7 +19,9 @@ export const Cards = ( props ) => {
   return (
 
     <div className={estilos.card}>
-      <img src={props.img} />
+     <div className={estilos.cardContainer}>
+     <img src={props.img} />
+     </div>
       <div>
         <h2>{props.title}</h2>
         <div className='flex justify-center md:justify-start'>
@@ -34,8 +36,12 @@ export const Cards = ( props ) => {
           {props.description}
         </p>
         <div className='flex gap-4 justify-center lg:justify-normal'>
-        <a target='_blank' href={props.href} rel='noreferrer'>{props.buttontxt}</a>
-        {props.href2 && <a target='_blank' href={props.href2} rel='noreferrer'>{props.buttontxt2}</a>}
+          {props.href &&
+           <a target='_blank' href={props.href} rel='noreferrer'>{props.buttontxt}</a> 
+          }
+       
+        {props.github && 
+        <a target='_blank' href={props.href2} rel='noreferrer' className='flex items-center w-14'><GithubIcon/> </a>}
         </div>
       </div>
     </div>

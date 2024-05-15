@@ -35,6 +35,10 @@ export default {
       },
       fontFamily: {
         'roboto' : 'Roboto, sans-serif'
+      },
+      animation: {
+        slide: 'slide 14s infinite linear',
+        slideInverse: 'slideInverse 14s infinite linear'
       }
       
     },
