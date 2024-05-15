@@ -19,7 +19,7 @@ export const Work = () => {
               rel="noreferrer"
             >
               <img
-                src="/Altomonte_home.png"
+                src="/altomonte_home.png"
                 alt="Imagen principal"
                 className="w-full h-auto object-cover rounded-lg mb-4"
               />
