@@ -34,6 +34,11 @@ export const certificates = [
         img: '/frontendDevReact.png',
         url: 'https://www.hackerrank.com/certificates/f523e268f621',
         alt: 'Certificado Frontend Developer React'
+    },
+    {
+        img: '/englishC2.png',
+        url: 'https://cert.efset.org/PsGJzn',
+        alt: 'Certificado Inglés C2'
     }
     
    
