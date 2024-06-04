@@ -11,7 +11,7 @@ export function OrbitingCirclesDemo() {
 
 
   return (
-    <div className="relative flex w-full h-[490px] items-center justify-center overflow-hidden ">
+    <div className="relative flex w-full h-[350px] lg:h-[490px] items-center justify-center overflow-hidden ">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
       </span>
 
@@ -83,22 +83,21 @@ export function OrbitingCirclesDemo() {
 
 const Skills = () => {
   return (
-    <section id='habilidades' className='lg:p-10 p-4'  style={{backgroundImage: 'url("/bg-dark.jpg")', backgroundPosition: 'center'}}>
+    <section id='habilidades' className='lg:p-10 p-4 bg-hero'>
       <h2 className="text-white pb-4 lg:text-5xl text-center text-3xl tracking-widest uppercase">
         Habilidades
       </h2>
      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10">
         <div className="relative flex justify-center items-center">
           <OrbitingCirclesDemo />
          
         </div>
         
-        <div className="relative flex flex-col justify-center items-center mt-10">
+        <div className="relative flex flex-col justify-center items-center">
           <div className="flex justify-center items-center">
             <EmblaCarousel slides={certificates} />
           </div>
-          
         </div>
       </div>
     </section>

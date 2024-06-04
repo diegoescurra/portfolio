@@ -115,8 +115,12 @@
   .embla__slide__img {
     border-radius: 1.8rem;
     display: block;
-    height: 13rem;
+    height: 17rem;
     width: 100%;
     object-fit: cover;
   }
+  .embla__slide {
+  flex: 0 0 91%;
+    }
+
 }

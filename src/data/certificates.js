@@ -11,6 +11,11 @@ export const certificates = [
         alt: 'Certificado Js Intermedio'
     },
     {
+        img: '/nodeJsBasic.png',
+        url: 'https://www.hackerrank.com/certificates/1b94f41a0bcb',
+        alt: 'Certificado Node.js Básico'
+    },
+    {
         img: '/sqlBasic.png',
         url: 'https://www.hackerrank.com/certificates/92ca4b615fdb',
         alt: 'Certificado SQL Básico'
