@@ -3,12 +3,12 @@ import {  MySQLIcon, NodeJSIcon, ReactJsIcon } from "../Icons";
 export const Work = () => {
   return (
     <section
-      id="portfolio"
-      className="bg-[#ecf0f1] text-[#333] w-full mx-auto px-4 py-10 relative"
+      id="portafolio"
+      className="bg-[#ecf0f1] text-[#333] w-full mx-auto px-4 py-10 relative flex"
     >
       <div>
-        <h2 className="text-shadowc pb-4 mb-14 lg:text-5xl text-center text-3xl  tracking-widest">
-          PORTAFOLIO
+        <h2 className="text-shadowc pb-4 mb-14 lg:text-5xl text-center text-3xl uppercase tracking-widest">
+          Portafolio
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-screen-xl">

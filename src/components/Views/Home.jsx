@@ -5,6 +5,8 @@ import { Hero } from "./Hero";
 import { Work } from "./Work";
 import { useEffect, useState } from "react";
 import Certificates from "./Certificates";
+import About from "./About";
+import Skills from "./Skills";
 
 export const Home = () => {
 
@@ -45,7 +47,7 @@ export const Home = () => {
       <Hero />
       <Work />
       <Projects />
-      <Certificates />
+      <Skills />
       <Contact />
     </Layout>
   );

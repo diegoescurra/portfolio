@@ -5,42 +5,47 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    screens: {
-      'sm': '640px',
-      // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    },
     extend: {
-      
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+
+          "marquee-vertical": {
+            from: { transform: "translateY(0)" },
+            to: { transform: "translateY(calc(-100% - var(--gap)))" },
+          },
+        },
+        orbit: {
+          "0%": {
+            transform: "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+          },
+        },
+      },
       colors: {
         'arsenic': '#33434F',
         'shadowc': '#628190',
-        'pastel-cyan' : '#A4D8D8',
-        'solitude' : '#ECEDEF',
+        'pastel-cyan': '#A4D8D8',
+        'solitude': '#ECEDEF',
       },
       height: {
         '112': '28rem',
         '128': '32rem',
       },
       fontFamily: {
-        'roboto' : 'Roboto, sans-serif'
+        'roboto': 'Roboto, sans-serif'
       },
-      animation: {
-        slide: 'slide 14s infinite linear',
-        slideInverse: 'slideInverse 14s infinite linear'
-      }
-      
+
+
     },
   },
   plugins: [],

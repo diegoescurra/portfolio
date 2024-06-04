@@ -3,34 +3,36 @@ header {
   z-index: 99;
 }
 
+
 nav {
-  @apply bg-gradient-to-r from-transparent to-shadowc fixed top-0 left-0 flex items-center justify-center gap-5 w-full h-[72px] text-white;
 
+  @apply capitalize inline-flex justify-center mt-5 items-center text-xs fixed top-0 font-medium bg-arsenic text-solitude;
+  translate: 0 -70px;
+  /* background-color:#2C2F33; */
+  transition: .3s;
+  border-radius: 50px;
+  gap: .7rem;
+  padding: 0.5rem 0.5625rem;
+  box-shadow:  0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03), 0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06)
+}
 
-  padding: 0 20px;
-  translate: 0 -72px;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
-  transition: 0.3s;
+.nav-item {
+  color: #FFFFFF;
+  cursor: pointer;
+  border-radius: 30px;
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+
+.nav-item:not(.active) {
+  color: #B0B3B8;
+}
+
+.nav-item.active {
+  background-color: #8A2BE2;
+  color: #FFFFFF;
 }
 
 nav.visible {
   translate: 0;
 }
-
-nav a {
-  color: inherit;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-nav a:hover {
-  color: #33434F
-}
-
-nav span {
-  margin-right: 10px;
-}
-
-

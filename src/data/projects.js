@@ -4,7 +4,7 @@ export const projects = [
     {
         id: 1,
         img: '/Admin panel.png',
-        title: 'Panel de administración',
+        title: 'Panel Administración',
         href: 'https://panel-cliente.onrender.com/',
         href2: 'https://github.com/Sie7he/admin_panel',
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],

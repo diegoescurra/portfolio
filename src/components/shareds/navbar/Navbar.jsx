@@ -1,53 +1,54 @@
-import { useEffect} from 'react';
+import { useEffect, useState } from 'react';
 import './navbar.css'
 
 
 export const Navbar = () => {
   let lastScrollTop = 0;
 
-  
-  
+  const [active, setActive] = useState('inicio');
+
+  const handleNavClick = (navItem) => {
+
+    setActive(navItem);
+  };
+
   const handleScroll = () => {
     const navbar = document.querySelector('#navbar')
     const scrollY = window.scrollY;
-    if(scrollY > lastScrollTop) {
+    if (scrollY > lastScrollTop) {
       navbar.classList.remove('visible')
-    } else if (scrollY < lastScrollTop){
+    } else if (scrollY < lastScrollTop) {
       navbar.classList.add('visible')
 
     }
-    lastScrollTop = scrollY <= 0 ? 0 : scrollY;  
-  
+    lastScrollTop = scrollY <= 0 ? 0 : scrollY;
+
   }
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll, {passive: true});
+    document.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, []); 
+  }, []);
+
+  const nav = [{id: 1, text:'inicio'}, {id: 2, text:'portafolio'}, {id: 3, text: 'habilidades'}, {id: 4, text: 'contacto'}]
 
   return (
-    <header>
-      <nav id="navbar" className='visible'>
-     
-      <a data-scroll="home" href="#home" >
+    <header className='flex justify-center' >
+      <nav id='navbar' className="visible">
+
+        {nav.map( item => (
+        <a
+        className={`nav-item ${active === item.text ? 'active' : ''}`}
+        onClick={() => handleNavClick(item.text)}
+        href={`/#${item.text}`}
+        >
+          {item.text}
+        </a>
+        ))}
        
-        Inicio
-      </a>
-      <a data-scroll="portfolio" href="#portfolio">
-       
-        Portafolio
-      </a>
-      <a data-scroll="certificates" href="#certificates">
-        
-        Certificados
-      </a>
-      <a data-scroll="contact" href="#contact">
-        
-        Contacto
-      </a>
-    </nav>
+      </nav>
     </header>
   );
 };
