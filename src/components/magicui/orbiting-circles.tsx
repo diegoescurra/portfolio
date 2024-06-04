@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { cn } from "../lib/utils";
 
 export default function OrbitingCircles({
@@ -7,7 +7,8 @@ export default function OrbitingCircles({
   reverse,
   duration = 20,
   delay = 10,
-  radius = 50,
+  defaultRadius = 50,
+  smallScreenRadius = 30,
   path = true,
 }: {
   className?: string;
@@ -15,9 +16,27 @@ export default function OrbitingCircles({
   reverse?: boolean;
   duration?: number;
   delay?: number;
-  radius?: number;
+  defaultRadius?: number;
+  smallScreenRadius?: number;
   path?: boolean;
 }) {
+
+  const [radius, setRadius] = useState(defaultRadius);
+
+  useEffect(() => {
+    const updateRadius = () => {
+      if (window.innerWidth < 768) {
+        setRadius(smallScreenRadius);
+      } else {
+        setRadius(defaultRadius);
+      }
+    };
+
+    window.addEventListener('resize', updateRadius);
+    updateRadius();
+
+    return () => window.removeEventListener('resize', updateRadius);
+  }, [defaultRadius, smallScreenRadius]);
   return (
     <>
       {path && (

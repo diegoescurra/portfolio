@@ -8,43 +8,48 @@ import { certificates } from '../../data/certificates';
 
 
 export function OrbitingCirclesDemo() {
+
+
   return (
-    <div className="relative flex h-[500px] w-full max-w-[49rem] items-center justify-center overflow-hidden ">
+    <div className="relative flex w-full h-[490px] items-center justify-center overflow-hidden ">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-        Skills
       </span>
 
       {/* Inner Circles */}
       <OrbitingCircles
-        className="h-[40px] w-[40px] border-none "
+        className="h-[28px] w-[28px] lg:w-[49px] border-none "
         duration={20}
         delay={20}
-        radius={80}
+        defaultRadius={70}
+        smallScreenRadius={35}
       >
         <ReactJsIcon />
       </OrbitingCircles>
       <OrbitingCircles
-        className="h-[40px] w-[40px] border-none"
+        className="h-[28px] w-[28px] lg:w-[49px] border-none"
         duration={20}
         delay={10}
-        radius={80}
+        defaultRadius={70}
+        smallScreenRadius={35}
       >
         <NodeJSIcon />
       </OrbitingCircles>
 
       {/* Outer Circles (reverse) */}
       <OrbitingCircles
-        className="h-[50px] w-[50px] border-none "
+        className="h-[40px] w-[40px] lg:w-[56px] border-none "
         reverse
-        radius={140}
+        defaultRadius={140}
+        smallScreenRadius={91}
         duration={20}
       >
         <PostgreSQLIcon />
       </OrbitingCircles>
       <OrbitingCircles
-        className="h-[50px] w-[50px] border-none bg-transparent"
+        className="h-[35px] w-[35px] lg:w-[56px] border-none bg-transparent"
         reverse
-        radius={140}
+        defaultRadius={140}
+        smallScreenRadius={91}
         duration={20}
         delay={20}
       >
@@ -52,16 +57,18 @@ export function OrbitingCirclesDemo() {
       </OrbitingCircles>
 
       <OrbitingCircles
-        className="h-[50px] w-[50px] border-none "
-        radius={210}
+        className="h-[35px] w-[35px] lg:w-[63px] border-none "
+        defaultRadius={210}
+        smallScreenRadius={140}
         duration={20}
         delay={20}
       >
         <JavaIcon />
       </OrbitingCircles>
       <OrbitingCircles
-        className="h-[50px] w-[50px] border-none"
-        radius={210}
+        className="h-[28px] w-[28px] lg:w-[63px] border-none"
+        defaultRadius={210}
+        smallScreenRadius={140}
         duration={20}
       >
         <JavaScriptIcon />
@@ -76,7 +83,7 @@ export function OrbitingCirclesDemo() {
 
 const Skills = () => {
   return (
-    <section id='habilidades' className='p-10'  style={{backgroundImage: 'url("/bg-dark.jpg")', backgroundPosition: 'center'}}>
+    <section id='habilidades' className='lg:p-10 p-4'  style={{backgroundImage: 'url("/bg-dark.jpg")', backgroundPosition: 'center'}}>
       <h2 className="text-white pb-4 lg:text-5xl text-center text-3xl tracking-widest uppercase">
         Habilidades
       </h2>
