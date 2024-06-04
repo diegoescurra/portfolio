@@ -88,7 +88,7 @@ const Skills = () => {
         Habilidades
       </h2>
      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
         <div className="relative flex justify-center items-center">
           <OrbitingCirclesDemo />
          
