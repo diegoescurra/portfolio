@@ -4,13 +4,13 @@ export const Work = () => {
   return (
     <section
       id="portafolio"
-      className="w-full px-4 py-10 "
+      className="w-full px-4 py-10 max-w-screen-xl mx-auto"
     >
-        <h2 className="pb-4 mb-14 lg:text-5xl text-center text-3xl uppercase tracking-widest">
+        <h3 className="max-w-3xl text-2xl font-semibold text-white md:text-2xl lg:text-4xl mb-4">
           Portafolio
-        </h2>
+        </h3>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 ">
           <div className="col-span-1 lg:col-span-7">
             <a
               href="https://altomontebienesraices.com/"

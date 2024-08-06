@@ -48,16 +48,16 @@ export const Contact = () => {
 
   
   return (
-    <section id="contacto" className=" py-10">
-      <div className="w-full max-w-4xl mx-auto">
-        <h2 className="p-4 mb-4 lg:text-5xl text-center text-3xl  tracking-widest">
-          CONTACTO
+    <section id="contacto" className="w-full px-4 py-10 max-w-screen-xl mx-auto">
+      
+        <h2 className="max-w-3xl text-2xl font-semibold text-white md:text-2xl lg:text-4xl mb-4">
+          Contacto
         </h2>
 
-        <div className="bg-white shadow rounded-lg p-6 mb-6">
+        <div className="bg-transparent shadow shadow-white rounded-lg p-6 mb-6">
           <div className="text-center p-4">
-            <p className="text-lg text-gray-400">
-              ¿Tienes preguntas o necesitas más información?
+            <p className="text-lg text-gray-200">
+              Si deseas comunicarte conmigo completa este formulario
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export const Contact = () => {
             <div className="mb-5">
               <label
                 htmlFor="name"
-                className="text-gray-700 font-bold mb-2 block"
+                className="text-gray-300 font-bold mb-2 block"
               >
                 Nombre
               </label>
@@ -82,7 +82,7 @@ export const Contact = () => {
             <div className="mb-5">
               <label
                 htmlFor="email"
-                className="text-gray-700 font-bold mb-2 block"
+                className="text-gray-300 font-bold mb-2 block"
               >
                 Correo
               </label>
@@ -103,7 +103,7 @@ export const Contact = () => {
             <div className="mb-5">
               <label
                 htmlFor="message"
-                className="text-gray-700 font-bold mb-2 block"
+                className="text-gray-300 font-bold mb-2 block"
               >
                 Mensaje
               </label>
@@ -125,7 +125,7 @@ export const Contact = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-gradient-to-r from-shadowc to-pastel-cyan hover:bg-gradient-to-tr hover:from-shadowc hover:to-pastel-cyan text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-gray-700 py-2 px-4 rounded-sm"
                 disabled={state.submitting}
               >
                 Enviar
@@ -133,7 +133,6 @@ export const Contact = () => {
             </div>
           </form>
         </div>
-      </div>
     </section>
   );
 };

@@ -35,7 +35,7 @@ export const Navbar = () => {
   const nav = [{id: 1, text:'inicio'}, {id: 2, text:'portafolio'}, {id: 3, text: 'habilidades'}, {id: 4, text: 'contacto'}]
 
   return (
-    <header className='flex justify-center' >
+    <header className='flex justify-center relative' >
       <nav id='navbar' className="visible">
 
         {nav.map( item => (
@@ -43,6 +43,7 @@ export const Navbar = () => {
         className={`nav-item ${active === item.text ? 'active' : ''}`}
         onClick={() => handleNavClick(item.text)}
         href={`/#${item.text}`}
+        key={item.id}
         >
           {item.text}
         </a>

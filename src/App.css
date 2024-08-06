@@ -3,15 +3,22 @@
 html {
     font-family: 'Roboto', sans-serif;
     @apply scroll-smooth;    
+    scrollbar-width: none;
+
 }
 
 
 body {
-  @apply flex min-h-full flex-col bg-gray-900 text-gray-100 antialiased
+  @apply flex min-h-full flex-col bg-gray-900 text-gray-100 antialiased;
 }
 
 h2 {
   text-wrap: balance;
+}
+
+.britny {
+  opacity: .7;
+ transform: translateY(-119.119px);
 }
 
   .light-circle {

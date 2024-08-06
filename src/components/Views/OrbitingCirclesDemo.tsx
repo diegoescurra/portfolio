@@ -9,7 +9,7 @@ export function OrbitingCirclesDemo() {
 
 
   return (
-    <div className="relative flex w-full h-[350px] lg:h-[490px] items-center justify-center overflow-hidden ">
+    <div className="relative flex w-full h-[350px] lg:h-[560px] items-center justify-center">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
       </span>
 
@@ -74,10 +74,10 @@ export function OrbitingCirclesDemo() {
 
       <OrbitingCircles
         className="h-[28px] w-[28px] lg:w-[63px] border-none"
-        defaultRadius={210}
+        defaultRadius={224}
         smallScreenRadius={140}
         duration={20}
-        delay={21}
+        delay={25}
       >
        <SpringIcon />
       </OrbitingCircles>

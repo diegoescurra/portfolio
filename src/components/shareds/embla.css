@@ -1,7 +1,7 @@
 .embla {
-  max-width: 49rem;
+  max-width: 100%;
   margin: auto;
-  --slide-height: 28rem;
+  --slide-height: 56rem;
   --slide-spacing: 1rem;
   --slide-size: 70%;
 }
@@ -22,7 +22,7 @@
 .embla__slide__img {
   border-radius: 1.8rem;
   display: block;
-  height: 21rem;
+  height: 35rem;
   width: 100%;
   object-fit: cover;
 }
