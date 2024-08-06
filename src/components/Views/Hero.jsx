@@ -5,24 +5,9 @@ export const Hero = () => {
   return (
     <section className="relative flex flex-col" id="inicio">
       <div className="absolute inset-0 -top-16 -z-10 lg:-top-28">
-        <div className="britny">
+        <div className="luz relative">
           <div className="absolute inset-x-0 top-28 md:top-80 max-w-[1280px] lg:bottom-auto lg:left-auto lg:right-0 lg:w-[80%] ">
             <OrbitingCirclesDemo />
-            {/* <div className="scale-[calc(16/9)] md:scale-100">
-          <div className="flex aspect-square items-center md:aspect-video">
-            <div className="aspect-video w-full" data-testid="vimeo-player" data-vimeo-initialized="true">
-              <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                <iframe
-                  src="https://player.vimeo.com/video/755968980?dnt=1&amp;loop=1&amp;background=1&amp;app_id=122963"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                  title="buildui.com homepage movie"
-                  data-ready="true"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div> */}
             <div className="absolute -inset-px bg-gray-900/50"></div>
             <div className="absolute -inset-px bg-gradient-to-b from-transparent via-transparent to-gray-900"></div>
             <div className="absolute -inset-px hidden bg-gradient-to-l from-transparent via-transparent to-gray-900 lg:block"></div>
@@ -30,7 +15,7 @@ export const Hero = () => {
           <div className="relative flex justify-center overflow-hidden">
             <img
               alt=""
-              fetchpriority="high"
+              fetchPriority="high"
               width="640"
               height="1124"
               decoding="async"
@@ -64,7 +49,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="mb-12 mt-64 border-white/[.03] md:mt-28 lg:my-56 lg:border-y lg:py-2">
+      <div className="mb-12 mt-56 border-white/[.03] md:mt-28 lg:my-[13rem] lg:border-y lg:py-2">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
           <h1 className="text-5xl font-bold tracking-tight text-white md:text-[40px] md:leading-[1.1] lg:col-span-2 lg:text-[64px] lg:leading-[1.125em]">
             Diego Escurra
