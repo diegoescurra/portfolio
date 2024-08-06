@@ -6,32 +6,15 @@ html {
 }
 
 
-.bg-hero {
-  background-image: url('/bg-dark.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+body {
+  @apply flex min-h-full flex-col bg-gray-900 text-gray-100 antialiased
 }
 
-
-section {
-    padding: 0 10%;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+h2 {
+  text-wrap: balance;
 }
-
 
   .light-circle {
     @apply pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute;
 
-  }
-
-  
-  @media (max-width: 768px) { 
-    .bg-hero {
-      background-image: url("/bg-dark-w800.jpg");
-      background-position: center;
-    }
-    
-  
   }

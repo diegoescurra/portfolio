@@ -29,8 +29,9 @@ export const Home = () => {
   }, [scrollY]);
 
   return (
+ 
     <Layout>
-     <div
+     {/* <div
         className="light-circle hidden lg:block"
 
         style={{
@@ -43,7 +44,7 @@ export const Home = () => {
           border: '3px solid #14213D',
           opacity: '.35'
         }}
-      />
+      /> */}
       <Hero />
       <Work />
       <Projects />

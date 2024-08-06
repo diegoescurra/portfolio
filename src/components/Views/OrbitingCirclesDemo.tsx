@@ -1,9 +1,7 @@
 import React from 'react'
 
 import OrbitingCircles from "../magicui/orbiting-circles";
-import { JavaIcon, JavaScriptIcon, MySQLIcon, NodeJSIcon, PostgreSQLIcon, ReactJsIcon } from '../Icons';
-import EmblaCarousel from '../shareds/EmblaCarousel';
-import { certificates } from '../../data/certificates';
+import { JavaIcon, JavaScriptIcon, MySQLIcon, NodeJSIcon, PostgreSQLIcon, ReactJsIcon, SpringIcon } from '../Icons';
 
 
 
@@ -74,6 +72,16 @@ export function OrbitingCirclesDemo() {
         <JavaScriptIcon />
       </OrbitingCircles>
 
+      <OrbitingCircles
+        className="h-[28px] w-[28px] lg:w-[63px] border-none"
+        defaultRadius={210}
+        smallScreenRadius={140}
+        duration={20}
+        delay={21}
+      >
+       <SpringIcon />
+      </OrbitingCircles>
+
     </div>
   );
 }
@@ -81,29 +89,8 @@ export function OrbitingCirclesDemo() {
 
 
 
-const Skills = () => {
-  return (
-    <section id='habilidades' className='lg:p-10 p-4 bg-hero'>
-      <h2 className="text-white pb-4 lg:text-5xl text-center text-3xl tracking-widest uppercase">
-        Habilidades
-      </h2>
-     
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
-        <div className="relative flex justify-center items-center">
-          <OrbitingCirclesDemo />
-         
-        </div>
-        
-        <div className="relative flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center">
-            <EmblaCarousel slides={certificates} />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 
 
-export default Skills
+
+export default OrbitingCirclesDemo;

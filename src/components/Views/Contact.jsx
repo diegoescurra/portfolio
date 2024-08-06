@@ -48,9 +48,9 @@ export const Contact = () => {
 
   
   return (
-    <section id="contacto" className="w-full bg-gray-100 py-10">
+    <section id="contacto" className=" py-10">
       <div className="w-full max-w-4xl mx-auto">
-        <h2 className="text-shadowc p-4 mb-4 lg:text-5xl text-center text-3xl  tracking-widest">
+        <h2 className="p-4 mb-4 lg:text-5xl text-center text-3xl  tracking-widest">
           CONTACTO
         </h2>
 

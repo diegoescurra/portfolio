@@ -1,6 +1,6 @@
 export const Layout = ({ children }) => {
   return (
-    <main className="w-full h-full m-auto text-arsenic relative ">
+    <main className="relative flex grow flex-col">
 
 
       {children}

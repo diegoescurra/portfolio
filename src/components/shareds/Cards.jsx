@@ -23,7 +23,7 @@ export const Cards = ( props ) => {
      <img src={props.img} />
      </div>
       <div>
-        <h2>{props.title}</h2>
+        <h2 className='text-gray-900'>{props.title}</h2>
         <div className='flex justify-center md:justify-start'>
           
         {props.icon.map((iconName, index) => {      
@@ -32,7 +32,7 @@ export const Cards = ( props ) => {
         
       })}
        </div>
-        <p>
+        <p className='h-14 md:h-20'>
           {props.description}
         </p>
         <div className='flex gap-4 justify-center lg:justify-normal'>

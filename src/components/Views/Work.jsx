@@ -4,14 +4,13 @@ export const Work = () => {
   return (
     <section
       id="portafolio"
-      className="bg-[#ecf0f1] text-[#333] w-full mx-auto px-4 py-10 relative flex"
+      className="w-full px-4 py-10 "
     >
-      <div>
-        <h2 className="text-shadowc pb-4 mb-14 lg:text-5xl text-center text-3xl uppercase tracking-widest">
+        <h2 className="pb-4 mb-14 lg:text-5xl text-center text-3xl uppercase tracking-widest">
           Portafolio
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-screen-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-screen-xl mx-auto">
           <div className="col-span-1 lg:col-span-7">
             <a
               href="https://altomontebienesraices.com/"
@@ -53,7 +52,7 @@ export const Work = () => {
             <div className="border-r-2  border-shadowc h-5/6"></div>
           </div>
           <div className="col-span-1 lg:col-span-4 flex flex-col justify-center p-4">
-            <a className="text-2xl lg:text-4xl mb-1 text-arsenic font-light" href="https://altomontebienesraices.com">
+            <a className="text-2xl lg:text-4xl mb-1 font-light" href="https://altomontebienesraices.com">
               Sitio Web Altomonte Bienes Raíces.
             </a>
             <p className="font-light italic">Proyecto Freelance</p>
@@ -67,7 +66,6 @@ export const Work = () => {
             </div>
           </div>
         </div>
-      </div>
       <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-b from-solitude to-purple-50"></div>
 
     </section>
