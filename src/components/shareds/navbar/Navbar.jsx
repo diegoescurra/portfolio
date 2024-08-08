@@ -8,7 +8,6 @@ export const Navbar = () => {
   const [active, setActive] = useState('inicio');
 
   const handleNavClick = (navItem) => {
-
     setActive(navItem);
   };
 

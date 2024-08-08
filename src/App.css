@@ -25,3 +25,31 @@ h2 {
     @apply pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute;
 
   }
+
+  article {
+    position: relative;
+  }
+  
+  article img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  article img.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  article:hover img.default-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  article:hover img.hover-image {
+    opacity: 1;
+  }
+  
