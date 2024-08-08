@@ -79,7 +79,7 @@ export const Hero = () => {
                 rel="noreferrer"
                 href="https://github.com/Sie7he"
               >
-                <GithubIcon />
+                <GithubIcon className={'w-10 h-10'} />
               </a>
             </div>
           </div>
