@@ -5,6 +5,8 @@ import {
   MySQLIcon,
   PostgreSQLIcon,
   JQueryIcon,
+  JavaIcon,
+  SpringIcon,
 } from "../Icons";
 import { ExternalLink, Github } from "lucide-react";
 
@@ -15,11 +17,13 @@ export const Cards = (props) => {
     JQueryIcon,
     ReactJsIcon,
     MySQLIcon,
+    JavaIcon,
+    SpringIcon,
     PostgreSQLIcon,
   };
 
   return (
-    <article className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ">
+    <article className={`group bg-white rounded-xl overflow-hidden shadow-lg  ${props.gif && 'hover:shadow-xl transition-all duration-300 hover:-translate-y-2'}`}>
       <div className="overflow-hidden relative">
         <a href={props.href} target="_blank" rel="noreferrer">
           <img
@@ -37,18 +41,28 @@ export const Cards = (props) => {
         </a>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-4 left-4 flex gap-3">
-            <a
-              href={props.href}
+           {
+            props.github && (
+              <a
+              href={props.github}
               className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
+              target="_blank" rel="noreferrer"
             >
               <Github size={20} className="text-gray-900" />
             </a>
-            <a
-              href={props.href2}
+            )
+           }
+           {
+            props.href && (
+              <a
+              href={props.href}
               className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
+              target="_blank" rel="noreferrer"
             >
               <ExternalLink size={20} className="text-gray-900" />
             </a>
+            )
+           }
           </div>
         </div>
       </div>
