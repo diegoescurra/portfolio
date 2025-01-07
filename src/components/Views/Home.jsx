@@ -8,9 +8,7 @@ import Certificates from "./Certificates";
 
 export const Home = () => {
 
-
   return (
- 
     <Layout>
       <Hero />
       <Work />

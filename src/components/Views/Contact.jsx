@@ -39,7 +39,7 @@ export const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-indigo-50 rounded-full text-indigo-600 text-sm font-medium mb-4">
-            <Sparkles size={16} className="mr-2" /> Conectémos
+            <Sparkles size={16} className="mr-2" /> Conectemos
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Ponte en Contacto</h2>
         </div>

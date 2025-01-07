@@ -19,8 +19,6 @@ const Certificates = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages )
   }
 
-
-
   return (
     <section className="py-20 relative overflow-hidden" id="habilidades">
     <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-blue-50/50">
@@ -43,7 +41,6 @@ const Certificates = () => {
         ))}
       </div>
 
-      {/* Pagination Controls */}
       <div className="flex justify-center items-center mt-12 gap-4">
         <button
           onClick={prevPage}

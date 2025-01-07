@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './navbar.css'
 
-
 export const Navbar = () => {
   let lastScrollTop = 0;
 
