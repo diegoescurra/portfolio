@@ -12,13 +12,13 @@ export const Contact = () => {
     return (
       <>
    
-          <div className="p-4 border-b text-gray-300 text-center">
+          <div className="p-4 border-b text-gray-700 text-center">
             <h3 className="text-lg font-semibold ">
               Mensaje Enviado
             </h3>
           </div>
           <div className="p-4 text-center">
-            <p>
+            <p className="text-gray-700">
               Gracias por tu mensaje. Me pondré en contacto contigo a la brevedad.
             </p>
           </div>
@@ -59,6 +59,7 @@ export const Contact = () => {
                   name="name"
                   className="w-full px-4 py-3 rounded-lg border  border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
                   placeholder="Tu nombre"
+                  required
                 />
               </div>
               
@@ -77,6 +78,7 @@ export const Contact = () => {
                   id="email"
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
                   placeholder="tu@email.com"
+                  required
                 />
               </div>
               
@@ -95,6 +97,7 @@ export const Contact = () => {
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
                   placeholder="Tu mensaje..."
+                  required
                 />
               </div>
               
@@ -120,7 +123,7 @@ export const Contact = () => {
            
               <div className="flex gap-4">
                 <a 
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/diego-escurra-6978651ba/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
@@ -132,7 +135,7 @@ export const Contact = () => {
                 </a>
 
                 <a 
-                  href="https://github.com/yourusername"
+                  href="https://github.com/diegoescurra"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"

@@ -1,4 +1,3 @@
-import estilos from "./card.module.css";
 import {
   NodeJSIcon,
   JavaScriptIcon,
@@ -6,8 +5,8 @@ import {
   MySQLIcon,
   PostgreSQLIcon,
   JQueryIcon,
-  GithubIcon,
 } from "../Icons";
+import { ExternalLink, Github } from "lucide-react";
 
 export const Cards = (props) => {
   const iconComponents = {
@@ -20,28 +19,47 @@ export const Cards = (props) => {
   };
 
   return (
-    <article className="max-w-sm rounded overflow-hidden shadow-gray-300 shadow">
-      <a href={props.href} target="_blank" rel="noreferrer">
-        <img
-          className="w-full aspect-video default-image"
-          src={props.img}
-          alt={props.title}
-        />
-        {props.gif && (
+    <article className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ">
+      <div className="overflow-hidden relative">
+        <a href={props.href} target="_blank" rel="noreferrer">
           <img
-            className="w-full aspect-video hover-image"
-            src={props.gif}
+            className="w-full aspect-video default-image"
+            src={props.img}
             alt={props.title}
           />
-        )}
-      </a>
+          {props.gif && (
+            <img
+              className="w-full aspect-video hover-image"
+              src={props.gif}
+              alt={props.title}
+            />
+          )}
+        </a>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-4 left-4 flex gap-3">
+            <a
+              href={props.href}
+              className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
+            >
+              <Github size={20} className="text-gray-900" />
+            </a>
+            <a
+              href={props.href2}
+              className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
+            >
+              <ExternalLink size={20} className="text-gray-900" />
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2 text-black">{props.title}</div>
         <div className="flex justify-center md:justify-start py-2">
           {props.icon.map((iconName, index) => {
             const IconComponent = iconComponents[iconName];
             return (
-              <div key={index} className="w-7 h-7 rounded-full mr-2">
+              <div key={index} className="w-8 h-8 rounded-full mr-2">
                 {" "}
                 {IconComponent ? <IconComponent /> : null}{" "}
               </div>
@@ -49,28 +67,6 @@ export const Cards = (props) => {
           })}
         </div>
         <p className="text-gray-700 text-base h-20">{props.description}</p>
-      </div>
-      <div className="flex items-center gap-4 justify-center lg:justify-normal w-full px-5 py-3">
-        {props.href && (
-          <a
-            target="_blank"
-            href={props.href}
-            rel="noreferrer"
-            className="lg:flex lg:justify-start bg-gray-200 rounded-full px-3 py-1 font-semibold text-gray-700 "
-          >
-            {props.buttontxt}
-          </a>
-        )}
-        {props.github && (
-          <a
-            target="_blank"
-            href={props.href2}
-            rel="noreferrer"
-            className="lg:flex lg:justify-end lg:w-full "
-          >
-            <GithubIcon className={"w-9 lg:w-10 h-9 lg:h-10 hover:scale-105 duration-300"} />
-          </a>
-        )}
       </div>
     </article>
   );

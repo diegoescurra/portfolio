@@ -1,3 +1,4 @@
+import { Terminal } from "lucide-react";
 import {  MySQLIcon, NodeJSIcon, ReactJsIcon } from "../Icons";
 
 export const Work = () => {
@@ -8,7 +9,13 @@ export const Work = () => {
     >
  
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <h3 className="text-2xl font-semibold text-center text-black md:text-2xl lg:text-4xl mb-4">Portafolio</h3>
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center px-4 py-2 bg-indigo-50 rounded-full text-indigo-600 text-sm font-medium mb-4">
+          <Terminal size={16} className="mr-2" /> Portafolio
+        </div>
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">Trabajo De Freelancer</h2>
+       
+      </div>
        
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 ">
