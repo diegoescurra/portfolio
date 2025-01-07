@@ -20,7 +20,7 @@ export const Cards = (props) => {
   };
 
   return (
-    <article className="max-w-sm rounded overflow-hidden shadow-white shadow">
+    <article className="max-w-sm rounded overflow-hidden shadow-gray-300 shadow">
       <a href={props.href} target="_blank" rel="noreferrer">
         <img
           className="w-full aspect-video default-image"
@@ -36,7 +36,7 @@ export const Cards = (props) => {
         )}
       </a>
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{props.title}</div>
+        <div className="font-bold text-xl mb-2 text-black">{props.title}</div>
         <div className="flex justify-center md:justify-start py-2">
           {props.icon.map((iconName, index) => {
             const IconComponent = iconComponents[iconName];
@@ -48,7 +48,7 @@ export const Cards = (props) => {
             );
           })}
         </div>
-        <p className="text-gray-400 text-base h-20">{props.description}</p>
+        <p className="text-gray-700 text-base h-20">{props.description}</p>
       </div>
       <div className="flex items-center gap-4 justify-center lg:justify-normal w-full px-5 py-3">
         {props.href && (

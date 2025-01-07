@@ -6,9 +6,9 @@ header {
 
 nav {
 
-  @apply capitalize inline-flex justify-center mt-5 items-center text-xs fixed top-0 font-medium bg-arsenic text-solitude;
+  @apply capitalize inline-flex justify-center mt-5 items-center text-xs fixed top-0 font-medium bg-indigo-100 text-white;
   translate: 0 -70px;
-  /* background-color:#2C2F33; */
+
   transition: .3s;
   border-radius: 50px;
   gap: .7rem;
@@ -25,7 +25,7 @@ nav {
 }
 
 .nav-item:not(.active) {
-  color: #B0B3B8;
+  color: indigo;
 }
 
 .nav-item.active {

@@ -4,11 +4,12 @@ export const Work = () => {
   return (
     <section
       id="portafolio"
-      className="w-full px-4 py-10 max-w-screen-xl mx-auto"
+      className="py-20 relative overflow-hidden"
     >
-        <h3 className="max-w-3xl text-2xl font-semibold text-white md:text-2xl lg:text-4xl mb-4">
-          Portafolio
-        </h3>
+ 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <h3 className="text-2xl font-semibold text-center text-black md:text-2xl lg:text-4xl mb-4">Portafolio</h3>
+       
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 ">
           <div className="col-span-1 lg:col-span-7">
@@ -51,8 +52,8 @@ export const Work = () => {
           <div className="hidden lg:block lg:col-span-1 py-14 items-center">
             <div className="border-r-2  border-shadowc h-5/6"></div>
           </div>
-          <div className="col-span-1 lg:col-span-4 flex flex-col justify-center p-4">
-            <a className="text-2xl lg:text-4xl mb-1 font-light" href="https://altomontebienesraices.com">
+          <div className="col-span-1 lg:col-span-4 flex flex-col justify-center p-4 text-gray-700">
+            <a className="text-2xl lg:text-4xl mb-1 font-light" target="_blank" href="https://altomontebienesraices.com" rel="noreferrer">
               Sitio Web Altomonte Bienes Raíces.
             </a>
             <p className="font-light italic">Proyecto Freelance</p>
@@ -66,8 +67,8 @@ export const Work = () => {
             </div>
           </div>
         </div>
-      <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-b from-solitude to-purple-50"></div>
-
+     
+        </div> 
     </section>
   );
 };
