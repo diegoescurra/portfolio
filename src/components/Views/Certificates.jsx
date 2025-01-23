@@ -6,7 +6,7 @@ import CardCertificate from '../shareds/CardCertificate';
 const Certificates = () => {
 
  const [currentPage, setCurrentPage] = useState(0)
-  const itemsPerPage = 6;
+  const itemsPerPage = 3;
 
   const totalPages = Math.ceil(certificates.length / itemsPerPage);
   const currentCertificates = certificates.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);

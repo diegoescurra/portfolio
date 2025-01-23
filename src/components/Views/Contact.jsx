@@ -1,6 +1,6 @@
 import { useForm, ValidationError } from "@formspree/react";
-import { Mail, Sparkles, Send } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from "../Icons";
+import { Sparkles, Send } from 'lucide-react';
+import { LinkedinIcon } from "../Icons";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export const Contact = () => {
@@ -12,7 +12,7 @@ export const Contact = () => {
     return (
       <>
    
-          <div className="p-4 border-b text-gray-700 text-center">
+          <div className="p-4 border-b text-gray-700 text-center" id="contacto">
             <h3 className="text-lg font-semibold ">
               Mensaje Enviado
             </h3>
@@ -123,7 +123,7 @@ export const Contact = () => {
            
               <div className="flex gap-4">
                 <a 
-                  href="https://www.linkedin.com/in/diego-escurra-6978651ba/"
+                  href="https://www.linkedin.com/in/diego-escurra/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
