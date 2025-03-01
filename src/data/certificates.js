@@ -56,5 +56,13 @@ export const certificates = [
     skills: ["Java", "SpringBoot", "Backend"],
     year: 2024
   },
+  {
+    img: "/microservicios.png",
+    url: "https://todocodeacademy.com/certificate/gnm-2/",
+    title: "Spring Cloud (Microservicios)",
+    issuer: "TodoCode",
+    skills: ["Java", "SpringBoot", "Backend"],
+    year: 2024
+  },
  
 ];
