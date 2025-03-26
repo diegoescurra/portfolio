@@ -53,3 +53,8 @@ h2 {
     opacity: 1;
   }
   
+ circle {
+    stroke: gray !important; /* O usa otro color más visible */
+    stroke-opacity: 0.2 !important; /* Aumenta la opacidad */
+    stroke-width: 1px !important; /* Engrosa la línea */
+  }

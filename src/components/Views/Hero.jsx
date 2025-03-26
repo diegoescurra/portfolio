@@ -47,7 +47,7 @@ export const Hero = () => {
             {/* Right column - Visual element */}
             <div className="relative hidden lg:block">
               <div className="relative w-full h-[600px] overflow-hidden">
-                <OrbitingCirclesDemo />
+                <OrbitingCirclesDemo className={"border-gray-500"} />
               </div>
             </div>
           </div>
