@@ -16,55 +16,68 @@ export function OrbitingCirclesDemo() {
      {/* Inner Circles */}
 <OrbitingCircles
   className="h-[28px] w-[28px] lg:w-[49px] border-none"
-  duration={120} // Más lento
-  delay={0} // Espaciado uniforme
+  duration={120} 
+  delay={0} 
   defaultRadius={70}
   smallScreenRadius={35}
 >
-  <ReactJsIcon />
+  <MySQLIcon />
 </OrbitingCircles>
 
 <OrbitingCircles
   className="h-[28px] w-[28px] lg:w-[49px] border-none"
   duration={120}
-  delay={30}
+  delay={70}
   defaultRadius={70}
   smallScreenRadius={35}
 >
-  <NodeJSIcon />
+  <PostgreSQLIcon />
 </OrbitingCircles>
 
 {/* Outer Circles (reverse) */}
 <OrbitingCircles
   className="h-[40px] w-[40px] lg:w-[56px] border-none"
-  reverse // Dirección opuesta
+  reverse 
   duration={120}
-  delay={60}
+  delay={90}
   defaultRadius={140}
   smallScreenRadius={91}
 >
-  <PostgreSQLIcon />
+  <JavaScriptIcon />
 </OrbitingCircles>
 
 <OrbitingCircles
   className="h-[35px] w-[35px] lg:w-[56px] border-none bg-transparent"
   reverse
   duration={120}
-  delay={90}
+  delay={130}
   defaultRadius={140}
   smallScreenRadius={91}
 >
-  <MySQLIcon />
+  <JavaIcon />
+</OrbitingCircles>
+
+
+<OrbitingCircles
+  className="h-[35px] w-[35px] lg:w-[63px] border-none"
+  reverse
+  duration={120}
+  delay={110}
+  defaultRadius={210}
+  smallScreenRadius={140}
+>
+  <ReactJsIcon />
 </OrbitingCircles>
 
 <OrbitingCircles
   className="h-[35px] w-[35px] lg:w-[63px] border-none"
+  reverse
   duration={120}
-  delay={120}
+  delay={70}
   defaultRadius={210}
   smallScreenRadius={140}
 >
-  <JavaIcon />
+  <NodeJSIcon />
 </OrbitingCircles>
 
 <OrbitingCircles
@@ -76,17 +89,6 @@ export function OrbitingCirclesDemo() {
   smallScreenRadius={140}
 >
   <SpringIcon />
-</OrbitingCircles>
-
-<OrbitingCircles
-  className="h-[35px] w-[35px] lg:w-[63px] border-none"
-  reverse
-  duration={120}
-  delay={150}
-  defaultRadius={210}
-  smallScreenRadius={140}
->
-  <JavaScriptIcon />
 </OrbitingCircles>
 
 
