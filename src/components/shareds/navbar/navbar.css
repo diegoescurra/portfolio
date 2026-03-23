@@ -1,36 +1,37 @@
 header {
   position: relative;
-  z-index: 40;
+  z-index: 50;
 }
 
 
 nav {
-
-  @apply capitalize inline-flex justify-center mt-5 items-center text-xs fixed top-0 font-medium bg-indigo-100 text-white;
+  @apply capitalize inline-flex justify-center mt-5 items-center text-xs fixed top-0 font-medium;
+  background: color-mix(in srgb, var(--bg-surface) 86%, white 14%);
+  border: 1px solid var(--line);
   translate: 0 -70px;
-
+  backdrop-filter: blur(10px);
   transition: .3s;
   border-radius: 50px;
   gap: .7rem;
-  padding: 0.5rem 0.5625rem;
-  box-shadow:  0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03), 0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06)
+  padding: 0.5rem 0.6rem;
+  box-shadow: 0 8px 24px rgba(30, 42, 42, 0.08);
 }
 
 .nav-item {
-  color: #FFFFFF;
+  color: var(--ink-soft);
   cursor: pointer;
   border-radius: 30px;
   line-height: 1.2;
-  padding: 0.5rem;
+  padding: 0.55rem 0.7rem;
 }
 
 .nav-item:not(.active) {
-  color: indigo;
+  color: var(--ink-soft);
 }
 
 .nav-item.active {
-  background-color: #8A2BE2;
-  color: #FFFFFF;
+  background-color: var(--accent);
+  color: #f2fcf8;
 }
 
 nav.visible {

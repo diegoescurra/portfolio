@@ -1,4 +1,4 @@
-import { GithubIcon, NodeJSIcon, JavaScriptIcon, ReactJsIcon, MySQLIcon, PostgreSQLIcon, JQueryIcon } from '../components/Icons';
+import { GithubIcon, NodeJSIcon, JavaScriptIcon, ReactJsIcon, MySQLIcon, PostgreSQLIcon, JQueryIcon, AstroIcon, NuxtIcon } from '../components/Icons';
 
 export const iconData = [
     GithubIcon,
@@ -7,5 +7,7 @@ export const iconData = [
     JQueryIcon,
     ReactJsIcon,
     MySQLIcon,
-    PostgreSQLIcon
+    PostgreSQLIcon,
+    AstroIcon,
+    NuxtIcon
  ]

@@ -6,7 +6,9 @@ export const projects = [
         gif: '/veterinaria.png',
         title: 'Veterinaria App',
         icon: ['SpringIcon', 'ReactJsIcon', 'MySQLIcon'],
-        description: 'Proyecto para la gestión de una veterinaria usando microservicios con Spring Cloud. Proyecto en proceso... ',
+        year: '2025',
+        role: 'Full Stack',
+        description: 'Sistema para gestionar turnos, pacientes y operaciones de una veterinaria con arquitectura basada en microservicios.',
         
     },
     {
@@ -17,7 +19,9 @@ export const projects = [
         icon: ['JavaIcon', 'SpringIcon', 'PostgreSQLIcon'],
         buttontxt: 'Ver',
         github : 'https://github.com/Sie7he/tienda_online',
-        description: "API realizada en Java utilizando el framework de Spring para representar una gestión de un negocio.",
+        year: '2024',
+        role: 'Backend',
+        description: 'API en Java con Spring para procesos de ventas, catalogo e inventario con persistencia relacional.',
     },
     {
         id: 3,
@@ -28,7 +32,9 @@ export const projects = [
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],
         buttontxt: 'Ver',
         github : 'https://github.com/Sie7he/admin_panel',
-        description: "Panel de administración que generalmente uso en mis proyectos. Esta aplicación está usando un servidor gratis, por lo que tardará en iniciar.",
+        year: '2025',
+        role: 'Frontend + API',
+        description: 'Panel administrativo reutilizable para gestionar usuarios, modulos y operaciones internas en distintos proyectos.',
     },
 
     {
@@ -39,7 +45,9 @@ export const projects = [
         icon: ['NodeJSIcon', 'ReactJsIcon', 'PostgreSQLIcon'],
         buttontxt: '',
         github: 'https://github.com/Sie7he/academiaX',
-        description: 'Aplicación interactiva CRUD para el registro y seguimiento de metas diarias, semanales y mensuales (Proyecto de AcademiaX).',
+        year: '2024',
+        role: 'Full Stack',
+        description: 'Aplicacion CRUD para seguimiento de metas personales con autenticacion y visualizacion de progreso.',
     },
  
    

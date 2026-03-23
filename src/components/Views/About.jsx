@@ -1,62 +1,38 @@
-
 const About = () => {
   return (
-    <section className="bg-[#f9fafb] dark:bg-[#111827] py-12 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <img
-            alt="Profile Picture"
-            className="rounded-full w-48 h-48 mx-auto mb-6"
-            height="500"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "500/500",
-              objectFit: "cover",
-            }}
-            width="500"
-          />
-          <h2 className="text-3xl font-bold text-[#1f2937] dark:text-[#f9fafb] mb-4">Sobre mí</h2>
-          <p className="text-[#6b7280] dark:text-[#d1d5db] mb-6">
-            Hi, I'm John, a passionate web developer with a diverse skill set and a track record of delivering
-            high-quality projects. I thrive on collaboration, innovative problem-solving, and continuously learning
-            new technologies.
+    <section className="py-16 px-4 sm:px-6 lg:px-8" id="experiencia">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-6">
+        <div className="lg:col-span-5 rounded-3xl bg-[var(--bg-surface)] border border-[var(--line)] p-8 shadow-[0_12px_30px_rgba(30,42,42,0.05)]">
+          <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent)] mb-3">Perfil</p>
+          <h2 className="text-3xl md:text-4xl text-[var(--ink-strong)] mb-4">Experiencia construyendo productos de principio a fin.</h2>
+          <p className="leading-relaxed">
+           Trabajo con clientes y equipos para convertir necesidades de negocio en soluciones digitales claras y funcionales. Me involucro en todo el proceso, desde la definición de la interfaz hasta el desarrollo de backend, APIs y despliegue.
           </p>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold text-[#1f2937] dark:text-[#f9fafb] mb-4">Habilidades</h3>
-          <ul className="space-y-2 text-[#6b7280] dark:text-[#d1d5db]">
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>SQL</li>
-            <li>Tailwind CSS</li>
-            <li>Git</li>
-         
-          </ul>
-          <h3 className="text-2xl font-bold text-[#1f2937] dark:text-[#f9fafb] mt-8 mb-4">Experiencia</h3>
-          <div className="space-y-4">
-            <div>
-              <h4 className="text-[#1f2937] dark:text-[#f9fafb] font-bold">Freelance</h4>
-              <p className="text-[#6b7280] dark:text-[#d1d5db]">Acme Inc. | 2020 - Present</p>
-              <p className="text-[#6b7280] dark:text-[#d1d5db]">
-                Developed and maintained complex web applications using React.js, Node.js, and TypeScript.
-                Collaborated with cross-functional teams to deliver high-quality, user-centric solutions.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-[#1f2937] dark:text-[#f9fafb] font-bold">Intern, Web Development</h4>
-              <p className="text-[#6b7280] dark:text-[#d1d5db]">Zeta Corp | 2019 - 2020</p>
-              <p className="text-[#6b7280] dark:text-[#d1d5db]">
-                Gained hands-on experience in web development, including building responsive user interfaces and
-                integrating backend services. Contributed to various projects and participated in team collaborations.
-              </p>
-            </div>
-          </div>
+
+        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--bg-surface)] p-6">
+            <p className="text-sm uppercase tracking-[0.16em] text-[var(--ink-soft)] mb-3">Enfoque</p>
+            <h3 className="text-xl mb-2 text-[var(--ink-strong)]">Producto + experiencia</h3>
+            <p>Diseño interfaces claras y funcionales, alineadas a cómo realmente usan los productos los usuarios.</p>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--bg-surface)] p-6">
+            <p className="text-sm uppercase tracking-[0.16em] text-[var(--ink-soft)] mb-3">Metodologia</p>
+            <h3 className="text-xl mb-2 text-[var(--ink-strong)]">Entrega incremental</h3>
+            <p>Trabajo en ciclos cortos, validando con feedback temprano y ajustando el producto en base a uso real.</p>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--bg-surface)] p-6 sm:col-span-2">
+            <p className="text-sm uppercase tracking-[0.16em] text-[var(--ink-soft)] mb-3">Experiencia reciente</p>
+            <h3 className="text-xl mb-2 text-[var(--ink-strong)]">Freelance y productos internos</h3>
+            <p>
+              Desarrollo de sitios web y plataformas internas para operaciones reales, incluyendo landing pages, paneles administrativos y sistemas conectados a backend, con foco en rendimiento y mantenibilidad.
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   )
 }
 

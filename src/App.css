@@ -1,60 +1,69 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-html {
-    @apply scroll-smooth;    
-    scrollbar-width: none;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
 
+:root {
+  --bg-main: #f4f2ec;
+  --bg-surface: #fffef9;
+  --ink-strong: #1e2a2a;
+  --ink-soft: #4a5958;
+  --accent: #1f7a6d;
+  --accent-soft: #d7efe9;
+  --line: #dde6e3;
 }
 
+html {
+  @apply scroll-smooth;
+  scrollbar-width: none;
+}
 
 body {
-  font-family: 'Lato','Roboto', sans-serif;
-  @apply flex min-h-full flex-col bg-gray-900 text-gray-100 antialiased;
+  font-family: 'DM Sans', sans-serif;
+  @apply min-h-full antialiased;
+  background: radial-gradient(circle at 15% 10%, #f9f3df 0%, transparent 30%), radial-gradient(circle at 85% 20%, #d7efe9 0%, transparent 35%), var(--bg-main);
+  color: var(--ink-strong);
 }
 
-h2 {
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-.luz {
- opacity: .8;
- transform: translateY(-119.119px);
+p {
+  color: var(--ink-soft);
 }
 
-  .light-circle {
-    @apply pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute;
+article {
+  position: relative;
+}
 
-  }
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-  article {
-    position: relative;
-  }
-  
-  article img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  article img.hover-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  article:hover img.default-image {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  article:hover img.hover-image {
-    opacity: 1;
-  }
-  
- circle {
-    stroke: gray !important; /* O usa otro color más visible */
-    stroke-opacity: 0.2 !important; /* Aumenta la opacidad */
-    stroke-width: 1px !important; /* Engrosa la línea */
-  }
+article img.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+article:hover img.default-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+article:hover img.hover-image {
+  opacity: 1;
+}
+
+circle {
+  stroke: #94a3a1 !important;
+  stroke-opacity: 0.3 !important;
+  stroke-width: 1px !important;
+}

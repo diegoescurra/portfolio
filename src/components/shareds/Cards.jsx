@@ -23,23 +23,40 @@ export const Cards = (props) => {
   };
 
   return (
-    <article className={`group bg-white rounded-xl overflow-hidden shadow-lg  ${props.gif && 'hover:shadow-xl transition-all duration-300 hover:-translate-y-2'}`}>
+    <article className={`group rounded-2xl overflow-hidden border border-[var(--line)] bg-[var(--bg-surface)] shadow-[0_10px_24px_rgba(30,42,42,0.06)] ${props.gif && 'hover:shadow-[0_18px_32px_rgba(30,42,42,0.12)] transition-all duration-300 hover:-translate-y-2'}`}>
       <div className="overflow-hidden relative">
-        <a href={props.href} target="_blank" rel="noreferrer">
-          <img
-            className="w-full aspect-video default-image"
-            src={props.img}
-            alt={props.title}
-          />
-          {props.gif && (
+        {props.href || props.github ? (
+          <a href={props.href || props.github} target="_blank" rel="noreferrer">
             <img
-              className="w-full aspect-video hover-image"
-              src={props.gif}
+              className="w-full aspect-video default-image"
+              src={props.img}
               alt={props.title}
             />
-          )}
-        </a>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {props.gif && (
+              <img
+                className="w-full aspect-video hover-image"
+                src={props.gif}
+                alt={props.title}
+              />
+            )}
+          </a>
+        ) : (
+          <>
+            <img
+              className="w-full aspect-video default-image"
+              src={props.img}
+              alt={props.title}
+            />
+            {props.gif && (
+              <img
+                className="w-full aspect-video hover-image"
+                src={props.gif}
+                alt={props.title}
+              />
+            )}
+          </>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-4 left-4 flex gap-3">
            {
             props.github && (
@@ -68,7 +85,11 @@ export const Cards = (props) => {
       </div>
 
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 text-black">{props.title}</div>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <div className="font-bold text-xl text-[var(--ink-strong)]">{props.title}</div>
+          {props.year && <span className="text-xs px-2 py-1 rounded-full bg-[var(--accent-soft)] text-[var(--accent)]">{props.year}</span>}
+        </div>
+        {props.role && <p className="text-sm text-[var(--ink-soft)] mb-2">{props.role}</p>}
         <div className="flex justify-center md:justify-start py-2">
           {props.icon.map((iconName, index) => {
             const IconComponent = iconComponents[iconName];
@@ -80,7 +101,7 @@ export const Cards = (props) => {
             );
           })}
         </div>
-        <p className="text-gray-700 text-base h-20">{props.description}</p>
+        <p className="text-base min-h-20">{props.description}</p>
       </div>
     </article>
   );

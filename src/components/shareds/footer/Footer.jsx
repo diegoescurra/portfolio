@@ -1,11 +1,11 @@
-import  './footer.module.css';
-
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer>
-      <span className="text-sm text-gray-100 sm:text-center dark:text-gray-100  max-w-screen-xl mx-auto"> 2023 Diego Escurra.
-    </span>
+    <footer className="w-full border-t border-[var(--line)] bg-[var(--bg-surface)]">
+      <div className="max-w-screen-xl mx-auto px-4 py-6 text-sm text-[var(--ink-soft)] text-center sm:text-left">
+        {currentYear} Diego Escurra. Hecho con React y Tailwind CSS.
+      </div>
     </footer>
-    
   )
 }

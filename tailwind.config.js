@@ -16,11 +16,10 @@ export default {
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
-
-          "marquee-vertical": {
-            from: { transform: "translateY(0)" },
-            to: { transform: "translateY(calc(-100% - var(--gap)))" },
-          },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
         orbit: {
           "0%": {
