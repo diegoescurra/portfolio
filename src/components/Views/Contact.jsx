@@ -120,7 +120,7 @@ export const Contact = () => {
 
             <div className="prose prose-lg">
               <p className="text-lg">
-              Si tienes una oportunidad, un proyecto o una idea para mejorar una plataforma existente, escribeme y te respondo pronto.
+              Si tienes una oportunidad, un proyecto o una idea para mejorar una plataforma existente, escríbeme y te respondo pronto.
               </p>
             </div>
 

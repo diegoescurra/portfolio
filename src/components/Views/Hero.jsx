@@ -20,7 +20,7 @@ export const Hero = () => {
 
               <h1 className="text-5xl md:text-7xl font-bold text-[var(--ink-strong)] leading-tight">
                 <span className="block">Diego Escurra</span>
-                <span className="block mt-3 text-[var(--accent)] text-2xl md:text-4xl">Creo productos web claros, rapidos y pensados para negocio real.</span>
+                <span className="block mt-3 text-[var(--accent)] text-2xl md:text-4xl">Creo productos web claros, rápidos y pensados para negocio real.</span>
               </h1>
 
               <p className="text-lg md:text-xl max-w-2xl leading-relaxed">
@@ -28,7 +28,7 @@ export const Hero = () => {
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <a href="#proyectos" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--accent)] text-[#effbf7] font-medium hover:brightness-95 transition">
+                <a href="#freelance" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--accent)] text-[#effbf7] font-medium hover:brightness-95 transition">
                   Ver proyectos <ArrowRight size={16} />
                 </a>
                 <a href="https://www.linkedin.com/in/diego-escurra/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--ink-strong)] font-medium hover:border-[var(--accent)] transition">

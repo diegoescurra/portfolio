@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import './navbar.css'
 
+const NAV_ITEMS = [
+  { id: 1, label: 'inicio', target: 'inicio' },
+  { id: 2, label: 'freelance', target: 'freelance' },
+  { id: 3, label: 'experiencia', target: 'experiencia' },
+  { id: 4, label: 'contacto', target: 'contacto' }
+]
+
 export const Navbar = () => {
   const [active, setActive] = useState('inicio');
   const lastScrollTop = useRef(0);
@@ -20,12 +27,13 @@ export const Navbar = () => {
       lastScrollTop.current = scrollY <= 0 ? 0 : scrollY;
     }
 
-    const sections = ['inicio', 'experiencia', 'proyectos', 'contacto'];
+    const sections = NAV_ITEMS.map((item) => item.target);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActive(entry.target.id);
+            const match = NAV_ITEMS.find((item) => item.target === entry.target.id);
+            if (match) setActive(match.label);
           }
         });
       },
@@ -45,20 +53,18 @@ export const Navbar = () => {
     };
   }, []);
 
-  const nav = [{id: 1, text:'inicio'}, {id: 2, text:'experiencia'}, {id: 3, text: 'proyectos'}, {id: 4, text: 'contacto'}]
-
   return (
     <header className='flex justify-center relative'>
       <nav id='navbar' className="visible">
 
-        {nav.map( item => (
+        {NAV_ITEMS.map( item => (
         <a
-        className={`nav-item ${active === item.text ? 'active' : ''}`}
-        onClick={() => setActive(item.text)}
-        href={`/#${item.text}`}
+        className={`nav-item ${active === item.label ? 'active' : ''}`}
+        onClick={() => setActive(item.label)}
+        href={`/#${item.target}`}
         key={item.id}
         >
-          {item.text}
+          {item.label}
         </a>
         ))}
        
