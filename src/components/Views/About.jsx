@@ -24,10 +24,10 @@ const About = () => {
           </article>
 
           <article className="rounded-2xl border border-[var(--line)] bg-[var(--bg-surface)] p-6 sm:col-span-2">
-            <p className="text-sm uppercase tracking-[0.16em] text-[var(--ink-soft)] mb-3">Experiencia reciente</p>
-            <h3 className="text-xl mb-2 text-[var(--ink-strong)]">Freelance y productos internos</h3>
+            <p className="text-sm uppercase tracking-[0.16em] text-[var(--ink-soft)] mb-3">Freelance</p>
+            <h3 className="text-xl mb-2 text-[var(--ink-strong)]">Trabajo con clientes</h3>
             <p>
-              Desarrollo de sitios web y plataformas internas para operaciones reales, incluyendo landing pages, paneles administrativos y sistemas conectados a backend, con foco en rendimiento y mantenibilidad.
+              Desarrollo sitios y soluciones web a medida para clientes, desde implementaciones simples hasta sistemas conectados a backend, trabajando sobre necesidades reales y casos concretos.
             </p>
           </article>
         </div>

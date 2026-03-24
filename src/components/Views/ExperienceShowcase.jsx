@@ -22,13 +22,13 @@ const selectedWork = [
 
 export const ExperienceShowcase = () => {
   return (
-    <section className="py-20 relative" id="experiencia">
+    <section className="py-20 relative z-0" id="experiencia">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-14">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)] mb-3">Experiencia profesional</p>
           <h2 className="text-4xl md:text-5xl text-[var(--ink-strong)] mb-4">Experiencia actual en IDA</h2>
           <p className="max-w-3xl leading-relaxed">
-            Actualmente trabajo como Full Stack Developer en proyectos reales para clientes e instituciones, con foco en calidad técnica, rendimiento y mantenibilidad.
+            Actualmente trabajo como Full Stack Developer en proyectos para clientes e instituciones, desarrollando soluciones en producción con foco en calidad técnica, rendimiento y mantenibilidad.
           </p>
         </header>
 
@@ -46,9 +46,9 @@ export const ExperienceShowcase = () => {
               </p>
 
               <ul className="list-disc pl-5 space-y-2 text-[var(--ink-soft)]">
-                <li>Optimización de rendimiento, Core Web Vitals y SEO técnico en sitios institucionales.</li>
+                <li>Mejora de rendimiento y Core Web Vitals en sitios en producción.</li>
                 <li>Colaboración transversal con diseño y producto para traducir requerimientos en soluciones implementables.</li>
-                <li>Implementación de arquitectura frontend escalable, mantenible y orientada a largo plazo.</li>
+                <li>Desarrollo de frontend y backend con enfoque en escalabilidad y mantenibilidad.</li>
               </ul>
             </div>
           </div>

@@ -120,8 +120,8 @@ export const Work = () => {
           <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--accent)]">
             <Terminal size={16} className="mr-2" /> Portafolio
           </div>
-          <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-2">Proyectos con clientes reales</h2>
-          <p>Casos implementados para negocio real con foco en experiencia, conversión y escalabilidad.</p>
+          <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-2">Proyectos desarrollados para necesidades reales.</h2>
+          <p>Desarrollo de sitios y plataformas desde cero, trabajando en arquitectura, funcionalidades e integración de servicios, donde cada proyecto se construye en base a requerimientos concretos, cuidando estructura, interacción y funcionamiento.</p>
         </div>
 
         <div className="space-y-10">

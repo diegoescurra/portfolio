@@ -11,10 +11,9 @@ export const Home = () => {
   return (
     <Layout>
       <Hero />
-      <About />
       <Work />
-      {/* <Projects /> */}
       <ExperienceShowcase />
+      <About />
       <Contact />
     </Layout>
   );

@@ -12,7 +12,6 @@
 
 html {
   @apply scroll-smooth;
-  scrollbar-width: none;
 }
 
 body {

@@ -15,16 +15,17 @@ export const Hero = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--accent)]">
-                <BriefcaseBusiness size={16} className="mr-2" /> Disponible para oportunidades frontend/full stack
+                <BriefcaseBusiness size={16} className="mr-2" /> Full Stack Developer
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold text-[var(--ink-strong)] leading-tight">
                 <span className="block">Diego Escurra</span>
-                <span className="block mt-3 text-[var(--accent)] text-2xl md:text-4xl">Creo productos web claros, rápidos y pensados para negocio real.</span>
+                <span className="block mt-3 text-[var(--accent)] text-2xl md:text-4xl">Desarrollo soluciones digitales a medida.</span>
               </h1>
 
               <p className="text-lg md:text-xl max-w-2xl leading-relaxed">
-                He trabajado en proyectos reales desarrollando soluciones a medida, desde landing pages hasta plataformas con backend.
+                Trabajo en el desarrollo de sitios y aplicaciones web en producción, para clientes e instituciones.
+                Participo en implementación, mejoras y corrección de errores en sistemas reales.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -79,7 +80,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronDown className="text-[var(--ink-soft)]" size={32} />
       </div>
     </section>
