@@ -3,12 +3,12 @@ import OrbitingCirclesDemo from './OrbitingCirclesDemo';
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen relative" id='inicio'>
-      <div className="absolute inset-0">
+    <section className="min-h-dvh relative" id='inicio'>
+      {/* <div className="absolute inset-0">
         <div className="hidden md:block absolute top-20 left-10 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-marquee"></div>
         <div className="hidden md:block absolute top-40 right-10 w-72 h-72 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-sky-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-marquee-vertical animation-delay-4000"></div>
-      </div>
+      </div> */}
 
       <div className="relative min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -79,7 +79,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronDown className="text-[var(--ink-soft)]" size={32} />
       </div>
     </section>

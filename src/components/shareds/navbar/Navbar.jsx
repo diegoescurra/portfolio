@@ -54,7 +54,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className='flex justify-center relative'>
+    <header className='flex justify-center relative mb-7 lg:mb-0'>
       <nav id='navbar' className="visible">
 
         {NAV_ITEMS.map( item => (

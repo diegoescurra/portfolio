@@ -29,10 +29,10 @@ export const Contact = () => {
 
   return (
     <section className="py-20 relative overflow-hidden" id="contacto">
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-transparent to-amber-50/40">
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/40 via-transparent to-amber-50/40">
         <div className="absolute top-20 right-0 w-72 h-72 bg-emerald-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob"></div>
         <div className="absolute bottom-20 left-0 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-4000"></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
