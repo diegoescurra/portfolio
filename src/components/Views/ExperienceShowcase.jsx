@@ -45,7 +45,6 @@ export const ExperienceShowcase = () => {
               </p>
 
               <ul className="list-disc pl-5 space-y-2 text-[var(--ink-soft)]">
-                <li>Colaboración transversal con equipos de diseño y contenido, traduciendo requerimientos en soluciones técnicas implementables y mantenibles.</li>
                 <li>Desarrollo y mantenimiento de funcionalidades frontend y backend, abarcando lógica de negocio y modelado de datos.</li>
                 <li>Optimización de rendimiento y Core Web Vitals en sitios en producción, reduciendo tiempos de carga y mejorando la experiencia de usuario.</li>
                 <li>Resolución de incidencias en entornos productivos, asegurando estabilidad y continuidad operativa.</li>
