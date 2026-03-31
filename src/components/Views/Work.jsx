@@ -121,7 +121,7 @@ export const Work = () => {
             <Terminal size={16} className="mr-2" /> Portafolio
           </div>
           <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-2">Proyectos desarrollados para necesidades reales.</h2>
-          <p>Desarrollo de sitios y plataformas desde cero, trabajando en arquitectura, funcionalidades e integración de servicios, donde cada proyecto se construye en base a requerimientos concretos, cuidando estructura, interacción y funcionamiento.</p>
+          <p>Desarrollo de sitios y plataformas, trabajando en arquitectura, funcionalidades e integración de servicios, donde cada proyecto se construye en base a requerimientos concretos, cuidando estructura, interacción y funcionamiento.</p>
         </div>
 
         <div className="space-y-10">
