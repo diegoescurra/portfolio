@@ -4,17 +4,25 @@ const WINDOWS_MS = 60 * 1000; // 1 minuto
 const MAX_REQUESTS = 7;
 
 function getIp(req) {
-    const ip = req.headers['x-forwarded-for'] 
+    const ip = req.headers['x-forwarded-for']
     return ip ? ip.split(',')[0].trim() : req.connection.remoteAddress;
 }
 
 
 export default async function handler(req, res) {
-    
+
+    res.setHeader("Access-Control-Allow-Origin", "https://diegoescurra.dev");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
+    }
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
-    
+
     const ip = getIp(req);
     if (!rateLimit[ip]) {
         rateLimit[ip] = {
@@ -53,7 +61,7 @@ export default async function handler(req, res) {
     try {
 
 
-      const context = `
+        const context = `
 Diego Escurra es Ingeniero Informático y desarrollador Full Stack con experiencia en proyectos reales para empresas e instituciones.
 
 Se tituló como Ingeniero Informático en AIEP, sede Valparaíso, donde estudió entre los años 2018 y 2023.
