@@ -1,25 +1,59 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const rateLimit = {};
+const WINDOWS_MS = 60 * 1000; // 1 minuto
+const MAX_REQUESTS = 7;
+
+function getIp(req) {
+    const ip = req.headers['x-forwarded-for'] 
+    return ip ? ip.split(',')[0].trim() : req.connection.remoteAddress;
+}
+
 
 export default async function handler(req, res) {
-
+    
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
+    
+    const ip = getIp(req);
+    if (!rateLimit[ip]) {
+        rateLimit[ip] = {
+            count: 1,
+            start: Date.now()
+        };
+    } else {
+        const now = Date.now();
+        const diff = now - rateLimit[ip].start;
+
+        if (diff < WINDOWS_MS) {
+            rateLimit[ip].count++;
+
+            if (rateLimit[ip].count > MAX_REQUESTS) {
+                res.setHeader("X-RateLimit-Limit", MAX_REQUESTS);
+                res.setHeader("X-RateLimit-Remaining", 0);
+                return res.status(429).json({
+                    error: "Demasiadas solicitudes, intenta más tarde."
+                });
+            }
+        } else {
+            rateLimit[ip] = { count: 1, start: now };
+        }
+    }
+
+
 
     const { message } = req.body;
     if (!message) {
         return res.status(400).json({ error: 'Message is required' });
     }
 
+    const remaining = Math.max(0, MAX_REQUESTS - rateLimit[ip].count);
+
+
     try {
 
-        const genAi = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-        const model = genAi.getGenerativeModel({
-            model: "models/gemini-2.0-flash",
-        })
-
-       const context = `
+        const context = `
 Diego Escurra es Ingeniero Informático y desarrollador Full Stack con experiencia en proyectos reales para empresas e instituciones.
 
 Su enfoque principal es el desarrollo con JavaScript, utilizando Node.js para backend y frameworks como React, Nuxt y Next en frontend. También cuenta con experiencia en Java utilizando Spring.
@@ -47,7 +81,10 @@ Actualmente está aprendiendo sobre Spring Security y tiene interés en profundi
 Otras habilidades incluyen el uso de herramientas de control de versiones como Git, metodologías ágiles y colaboración en equipo.
 `;
 
-const prompt = `
+        const safeMessage = message.slice(0, 500); // Limitar el mensaje a 500 caracteres para evitar problemas de longitud
+
+
+        const prompt = `
 Responde como un asistente del portafolio de Diego Escurra.
 
 Tono:
@@ -71,20 +108,50 @@ Contexto:
 ${context}
 
 Pregunta:
-${message}
+${safeMessage}
 `;
-        const result = await model.generateContent(
-           prompt
-        )
 
-        const response = await result.response;
-        const text = response.text();
+        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                model: "mistralai/mistral-7b-instruct:free",
+                messages: [
+                    {
+                        role: "system",
+                        content: "Eres un asistente experto en el portafolio de Diego Escurra, un desarrollador Full Stack. Responde a las preguntas basándote únicamente en la información proporcionada en el contexto. Si no sabes la respuesta, dilo claramente."
+                    },
+                    {
+                        role: "user",
+                        content: prompt
+                    }
+                ],
+            })
+        });
 
-        res.status(200).json({ response: text });
+
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('Error response from OpenRouter;', errorText);
+            res.setHeader("X-RateLimit-Limit", MAX_REQUESTS);
+            res.setHeader("X-RateLimit-Remaining", remaining);
+            return res.status(500).json({ error: 'Error al generar la respuesta' });
+        }
+        const data = await response.json();
+
+        res.setHeader("X-RateLimit-Limit", MAX_REQUESTS);
+        res.setHeader("X-RateLimit-Remaining", remaining);
+        return res.status(200).json({ response: data.choices?.[0]?.message?.content || "No response generated" });
 
     }
     catch (error) {
         console.error('Error generating response:', error);
+        res.setHeader("X-RateLimit-Limit", MAX_REQUESTS);
+        res.setHeader("X-RateLimit-Remaining", remaining);
         res.status(500).json({ error: 'Failed to generate response' });
     }
 }
