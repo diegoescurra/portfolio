@@ -54,11 +54,17 @@ export const Chat = () => {
         throw new Error("No se pudo obtener respuesta del asistente.");
       }
 
+
       const data = await response.json();
+      const cleanText = data.response
+      .replace(/\u00A/g, " ")
+      .replace(/\n+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
 
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.response || "No tengo respuesta por ahora." }
+        { role: "assistant", content: cleanText || "No tengo respuesta por ahora." }
       ]);
 
     } catch (error) {
