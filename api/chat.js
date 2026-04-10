@@ -118,7 +118,7 @@ ${safeMessage}
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "deepseek/deepseek-r1:free",
+                model: "openrouter/free",
                 messages: [
                     {
                         role: "system",
