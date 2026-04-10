@@ -91,6 +91,10 @@ Trabaja con despliegues en plataformas como Netlify y Vercel, utilizando arquite
 Actualmente está aprendiendo sobre Spring Security y tiene interés en profundizar en Kubernetes, AWS y desarrollo de aplicaciones móviles.
 
 Otras habilidades incluyen el uso de herramientas de control de versiones como Git, metodologías ágiles y colaboración en equipo.
+
+Actualmente está abierto a nuevas oportunidades laborales, buscando roles que le permitan seguir creciendo como desarrollador y aportar con su experiencia en proyectos desafiantes.
+
+Disponibilidad inmediata para comenzar nuevos proyectos o integrarse a equipos de desarrollo.
 `;
 
         const safeMessage = message.slice(0, 500); // Limitar el mensaje a 500 caracteres para evitar problemas de longitud

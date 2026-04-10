@@ -7,7 +7,7 @@ export const Chat = () => {
     {
       role: "assistant",
       content:
-        "Hola, soy Bot. Puedes preguntarme por experiencia, stack, proyectos o disponibilidad.",
+        "Hola, soy PortaBot. Puedes preguntarme por experiencia, stack, proyectos o disponibilidad.",
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -86,7 +86,7 @@ export const Chat = () => {
                 <Bot size={20} />
               </span>
               <div>
-                <p className="text-[var(--ink-strong)] font-medium">Bot</p>
+                <p className="text-[var(--ink-strong)] font-medium">PortaBot</p>
                 <p className="text-xs text-[var(--ink-soft)] inline-flex items-center gap-1">
                   <Sparkles size={12} /> Asistente de portafolio
                 </p>
@@ -109,12 +109,12 @@ export const Chat = () => {
 
                 return (
                   <div key={`${msg.role}-${i}`} className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[90%] sm:max-w-[78%] rounded-2xl px-4 py-3 border ${isUser ? "bg-[var(--accent)] text-[#effbf7] border-[var(--accent)] rounded-br-md" : "bg-white text-[var(--ink-strong)] border-[var(--line)] rounded-bl-md"}`}>
-                      <div className="flex items-center gap-2 mb-1.5 text-xs opacity-90">
+                    <div className={`max-w-[90%] sm:max-w-[78%] rounded-2xl px-4 py-3 border ${isUser ? "bg-[var(--accent)] text-white  border-[var(--accent)] rounded-br-md" : "bg-white text-[var(--ink-strong)] border-[var(--line)] rounded-bl-md"}`}>
+                      <div className="flex items-center gap-2 mb-1.5 text-xs">
                         {isUser ? <UserRound size={14} /> : <Bot size={14} />}
                         <span>{isUser ? "Tú" : "Bot"}</span>
                       </div>
-                      <p className="text-sm sm:text-base leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+                      <p className={`text-sm sm:text-base leading-relaxed whitespace-pre-wrap ${isUser? "text-white" : "text-[var(--ink-strong)]"}`}>{msg.content}</p>
                     </div>
                   </div>
                 );
