@@ -4,6 +4,7 @@ import { Hero } from "./Hero";
 import { Work } from "./Work";
 import About from "./About";
 import ExperienceShowcase from "./ExperienceShowcase";
+import { Chat } from "../shareds/Chat";
 
 
 export const Home = () => {
@@ -14,6 +15,7 @@ export const Home = () => {
       <Work />
       <ExperienceShowcase />
       <About />
+      <Chat />
       <Contact />
     </Layout>
   );
