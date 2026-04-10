@@ -43,6 +43,8 @@ Se caracteriza por su enfoque en análisis de requerimientos, código limpio y o
 Trabaja con despliegues en plataformas como Netlify y Vercel, utilizando arquitecturas modernas orientadas a servicios y serverless.
 
 Actualmente está aprendiendo sobre Spring Security y tiene interés en profundizar en Kubernetes, AWS y desarrollo de aplicaciones móviles.
+
+Otras habilidades incluyen el uso de herramientas de control de versiones como Git, metodologías ágiles y colaboración en equipo.
 `;
 
 const prompt = `
