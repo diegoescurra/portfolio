@@ -2,46 +2,44 @@ import { useEffect, useRef, useState } from "react";
 import { Bot, MessageCircle, SendHorizontal, Sparkles, UserRound, X } from "lucide-react";
 
 export const Chat = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([
-    {
-      role: "assistant",
-      content:
-        "Hola, soy PortaBot. Puedes preguntarme por experiencia, stack, proyectos o disponibilidad.",
-    },
-  ]);
+  const [messages, setMessages] = useState([{
+    role: "assistant",
+    content: "Hola, soy PortaBot, asistente de portafolio de Diego. ¿En que puedo ayudarte?"
+  }]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-  const messagesEndRef = useRef(null);
+  const messageEndRef = useRef(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
+    messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading])
 
   useEffect(() => {
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") setIsOpen(false);
-    };
-
-    if (isOpen) {
-      document.addEventListener("keydown", onKeyDown);
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setIsOpen(false);
     }
 
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [isOpen]);
+    if (isOpen) {
+      window.addEventListener("keydown", onKeyDown);
+    }
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen])
 
   const sendMessage = async () => {
-    if (!message.trim()) return;
-
-    const userMessage = message;
     setError("");
-
-    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
-    setMessage("");
-    setLoading(true);
-
+    const userMessage = message.trim();
+    if (!userMessage || loading ) return;
+    setMessages(prev => [...prev, {
+      role: "user",
+      content: userMessage
+    }])
     try {
+      setMessage("");
+      setLoading(true);
       const response = await fetch("https://portfolio-phi-lyart-70.vercel.app/api/chat", {
         method: "POST",
         headers: {
@@ -51,36 +49,40 @@ export const Chat = () => {
       });
 
       if (!response.ok) {
-        throw new Error("No se pudo obtener respuesta del asistente.");
+        throw new Error("Error al enviar el mensaje");
       }
-
-
       const data = await response.json();
-      const cleanText = data.response
-      .replace(/\u00A/g, " ")
-      .replace(/\n+/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
+      const raw = data?.response ?? "";
 
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: cleanText || "No tengo respuesta por ahora." }
-      ]);
+      const cleanText = raw
+        .replace(/\u00A0/g, " ")
+        .replace(/\n{3,}/g, "\n\n")
+        .replace(/[ \t]+/g, " ")
+        .trim();
+      setMessages(prev => [...prev, {
+        role: "assistant",
+        content: cleanText || "No tengo respuesta por ahora."
+      }])
+
 
     } catch (error) {
-      console.error(error);
-      setError("Hubo un problema al responder. Intenta nuevamente en unos segundos.");
+      setError("Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.");
+      setMessages(prev => [...prev, {
+        role: "assistant",
+        content: "Lo siento, ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo."
+      }])
     } finally {
       setLoading(false);
     }
-  };
+  }
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      if (!loading) sendMessage();
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // Evita el salto de línea
+      if (!loading && message.trim()) sendMessage();
     }
-  };
+  }
+
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[70]">
@@ -118,9 +120,9 @@ export const Chat = () => {
                     <div className={`max-w-[90%] sm:max-w-[78%] rounded-2xl px-4 py-3 border ${isUser ? "bg-[var(--accent)] text-white  border-[var(--accent)] rounded-br-md" : "bg-white text-[var(--ink-strong)] border-[var(--line)] rounded-bl-md"}`}>
                       <div className="flex items-center gap-2 mb-1.5 text-xs">
                         {isUser ? <UserRound size={14} /> : <Bot size={14} />}
-                        <span>{isUser ? "Tú" : "Bot"}</span>
+                        <span>{isUser ? "Tú" : "Asistente"}</span>
                       </div>
-                      <p className={`text-sm sm:text-base leading-relaxed whitespace-pre-wrap ${isUser? "text-white" : "text-[var(--ink-strong)]"}`}>{msg.content}</p>
+                      <p className={`text-sm sm:text-base leading-relaxed whitespace-pre-wrap ${isUser ? "text-white" : "text-[var(--ink-strong)]"}`}>{msg.content}</p>
                     </div>
                   </div>
                 );
@@ -138,8 +140,8 @@ export const Chat = () => {
                   </div>
                 </div>
               )}
+              <div ref={messageEndRef} />
 
-              <div ref={messagesEndRef} />
             </div>
           </div>
 
@@ -147,11 +149,10 @@ export const Chat = () => {
             <div className="flex items-end gap-2 sm:gap-3">
               <textarea
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Escribe tu pregunta..."
-                rows={1}
-                className="min-h-[48px] max-h-32 w-full resize-y rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-[var(--ink-strong)] placeholder:text-[var(--ink-soft)] focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
+                className="min-h-[48px] max-h-32 w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-[var(--ink-strong)] placeholder:text-[var(--ink-soft)] focus:outline-none focus:ring-2 focus:ring-emerald-500/30 resize-none"
               />
               <button
                 onClick={sendMessage}
