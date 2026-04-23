@@ -13,22 +13,13 @@ export const workItems = [
       "Optimización responsive con foco en experiencia mobile",
       "Optimización de rendimiento para mejorar tiempos de carga",
     ],
-    stack: ["react", "node", "mysql"],
+    stack: ["next", "node", "postgre"],
     mainImage: {
       src: "/altomonte_home.png",
       alt: "Altomonte home",
       href: "https://altomontebienesraices.com/",
     },
-    gallery: [
-      {
-        src: "/altomonte_note.png",
-        alt: "Detalle de propiedad",
-      },
-      {
-        src: "/altomonte_phones.png",
-        alt: "Vista mobile",
-      },
-    ],
+   
   },
   {
     id: "ranut",
@@ -48,6 +39,26 @@ export const workItems = [
       "Diseño responsive optimizado para dispositivos móviles",
       "Implementación de secciones orientadas a facilitar el contacto con clientes potenciales",
     ],
-    stack: ["astro"],
+    stack: ["astro", "sanity"],
+  },
+  {
+    id: "portteck",
+    title: "Portteck",
+    
+    subtitle: "Empresa dedicada a proporsucionar soluciones de control de acceso y seguridad",
+    description:
+      "Aplicación mobile que consta de manuales de instalación, uso y mantenimiento de productos de control de acceso y seguridad, desarrollada para facilitar el acceso a información técnica relevante para clientes y técnicos instaladores, con el objetivo de mejorar la experiencia postventa y soporte técnico.",
+    mainImage: {
+      src: "/Portteck.png",
+      alt: "Portteck preview",
+      href: "https://www.portteck.cl",
+    },
+    highlights: [
+      "Desarrollo de aplicación mobile para consulta de manuales técnicos utilizando React Native",
+      "Implementación de categorización de productos para mejorar la búsqueda y usabilidad",
+      "Consumo de datos desde backend para mantener contenido actualizado",
+      "Mejora de la experiencia postventa mediante acceso centralizado a documentación técnica",
+    ],
+    stack: ["reactNative", "next", "supabase"],
   },
 ];

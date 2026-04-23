@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Terminal } from "lucide-react";
-import { AstroIcon, MySQLIcon, NodeJSIcon, ReactJsIcon } from "../Icons";
+import { AstroIcon, MySQLIcon, NodeJSIcon, ReactJsIcon, NextIcon, PostgreSQLIcon, SupabaseIcon, SanityIcon } from "../Icons";
 import { workItems } from "../../data/work";
 
 const ICON_MAP = {
@@ -8,6 +8,11 @@ const ICON_MAP = {
   node: NodeJSIcon,
   mysql: MySQLIcon,
   astro: AstroIcon,
+  reactNative: ReactJsIcon,
+  next: NextIcon,
+  postgre: PostgreSQLIcon,
+  supabase: SupabaseIcon,
+  sanity: SanityIcon
 };
 
 const WorkHighlights = memo(function WorkHighlights({ items }) {
@@ -31,6 +36,7 @@ const WorkStack = memo(function WorkStack({ stack }) {
         if (!IconComponent) return null;
 
         const label = tech === "node" ? "Node.js" : tech.charAt(0).toUpperCase() + tech.slice(1);
+        const displayLabel = label === "ReactNative" ? "React Native" : label;
 
         return (
           <span
@@ -40,7 +46,7 @@ const WorkStack = memo(function WorkStack({ stack }) {
             <span className="h-4 w-4 [&>svg]:h-full [&>svg]:w-full">
               <IconComponent className="h-full w-full" />
             </span>
-            {label}
+            {displayLabel}
           </span>
         );
       })}
@@ -53,7 +59,7 @@ const WorkMedia = memo(function WorkMedia({ mainImage, gallery, title }) {
     <img
       src={mainImage.src}
       alt={mainImage.alt}
-      className="w-full aspect-[16/10] object-cover object-top rounded-2xl"
+      className="w-full aspect-[16/10] object-cover rounded-2xl"
       loading="lazy"
     />
   );

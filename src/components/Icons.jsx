@@ -265,3 +265,104 @@ export const AstroIcon = (props) => (
     </defs>
   </svg>
 )
+
+
+export const NextIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={18}
+    viewBox="0 0 180 180"
+    {...props}
+  >
+    <mask
+      id="a"
+      width={180}
+      height={180}
+      x={0}
+      y={0}
+      maskUnits="userSpaceOnUse"
+      style={{
+        maskType: "alpha",
+      }}
+    >
+      <circle cx={90} cy={90} r={90} />
+    </mask>
+    <g mask="url(#a)">
+      <circle cx={90} cy={90} r={90} data-circle="true" />
+      <path
+        fill="url(#b)"
+        d="M149.508 157.52 69.142 54H54v71.97h12.114V69.384l73.885 95.461a90.304 90.304 0 0 0 9.509-7.325Z"
+      />
+      <path fill="url(#c)" d="M115 54h12v72h-12z" />
+    </g>
+    <defs>
+      <linearGradient
+        id="b"
+        x1={109}
+        x2={144.5}
+        y1={116.5}
+        y2={160.5}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#fff" />
+        <stop offset={1} stopColor="#fff" stopOpacity={0} />
+      </linearGradient>
+      <linearGradient
+        id="c"
+        x1={121}
+        x2={120.799}
+        y1={54}
+        y2={106.875}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#fff" />
+        <stop offset={1} stopColor="#fff" stopOpacity={0} />
+      </linearGradient>
+    </defs>
+  </svg>
+)
+
+export const SupabaseIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={109}
+    height={113}
+    fill="none"
+    viewBox="0 0 109 113"
+    {...props}
+  >
+    <path
+      fill="#3ECF8E"
+      d="M63.708 110.284c-2.86 3.601-8.658 1.628-8.727-2.97l-1.007-67.251h45.22c8.19 0 12.758 9.46 7.665 15.874l-43.151 54.347Z"
+    />
+    <path
+      fill="#3ECF8E"
+      d="M45.317 2.071c2.86-3.601 8.657-1.628 8.726 2.97l.442 67.251H9.83c-8.19 0-12.759-9.46-7.665-15.875L45.317 2.072Z"
+    />
+    <defs>
+      <linearGradient
+        id="a"
+        x1={53.974}
+        x2={94.163}
+        y1={54.974}
+        y2={71.829}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#249361" />
+        <stop offset={1} stopColor="#3ECF8E" />
+      </linearGradient>
+    
+    </defs>
+  </svg>
+)
+
+export const SanityIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 172 138"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="m166.467 91.155-6.377-10.78-30.839 18.249 34.257-42.372 5.179-2.947-1.28-1.867 2.349-2.913-10.805-8.749-4.956 6.13-99.845 56.746 36.923-43.123 68.759-36.617-6.529-12.272-37.451 19.94L134.29 9.044 123.72 0 82.218 48.49 40.986 70.439 72.553 29.91l19.776-9.994-6.271-12.413L28.42 36.652l15.725-20.199-10.98-8.538L0 50.545l.517.411 6.189 12.249 36.781-18.59L9.97 87.642l5.485 4.275 3.264 6.13 38.72-20.61-42.63 49.805 10.557 9.031 2.126-2.478L130.344 75.16l-34.151 42.242.564.458-.06.024 7.082 11.966 45.413-26.869-17.486 27.41 11.72 7.469 27.845-43.64-4.804-3.065Z" />
+  </svg>
+);
