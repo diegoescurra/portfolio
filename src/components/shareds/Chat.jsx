@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, MessageCircle, SendHorizontal, Sparkles, UserRound, X } from "lucide-react";
 
-const CHAT_ENDPOINT = "/api/chat";
+const CHAT_ENDPOINT = "https://portfolio-phi-lyart-70.vercel.app/api/chat";
 
 function createMessage(id, role, content) {
   return { id, role, content };
