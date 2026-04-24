@@ -1,88 +1,155 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, MessageCircle, SendHorizontal, Sparkles, UserRound, X } from "lucide-react";
 
-export const Chat = () => {
+const CHAT_ENDPOINT = "/api/chat";
 
+function createMessage(id, role, content) {
+  return { id, role, content };
+}
+
+function MessageBubble({ message }) {
+  const isUser = message.role === "user";
+
+  return (
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+      <div
+        className={`max-w-[90%] sm:max-w-[78%] rounded-2xl px-4 py-3 border ${
+          isUser
+            ? "bg-[var(--accent)] text-white border-[var(--accent)] rounded-br-md"
+            : "bg-white text-[var(--ink-strong)] border-[var(--line)] rounded-bl-md"
+        }`}
+      >
+        <div className="flex items-center gap-2 mb-1.5 text-xs">
+          {isUser ? <UserRound size={14} /> : <Bot size={14} />}
+          <span>{isUser ? "Tú" : "Asistente"}</span>
+        </div>
+        <p
+          className={`text-sm sm:text-base leading-relaxed whitespace-pre-wrap ${
+            isUser ? "text-white" : "text-[var(--ink-strong)]"
+          }`}
+        >
+          {message.content}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([{
-    role: "assistant",
-    content: "Hola, soy PortaBot, asistente de portafolio de Diego. ¿En que puedo ayudarte?"
-  }]);
+  const [messages, setMessages] = useState([
+    createMessage(
+      "assistant-welcome",
+      "assistant",
+      "Hola, soy PortaBot, asistente del portafolio de Diego. ¿En qué puedo ayudarte?"
+    ),
+  ]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   const messageEndRef = useRef(null);
+  const idCounterRef = useRef(0);
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading])
+  }, [messages, loading]);
 
   useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") setIsOpen(false);
-    }
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
 
     if (isOpen) {
       window.addEventListener("keydown", onKeyDown);
     }
 
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [isOpen])
+  }, [isOpen]);
+
+  const nextId = () => {
+    idCounterRef.current += 1;
+    return `msg-${idCounterRef.current}`;
+  };
+
+  const updateAssistantMessage = (assistantId, content) => {
+    setMessages((prev) =>
+      prev.map((item) => (item.id === assistantId ? { ...item, content } : item))
+    );
+  };
+
+  const streamAssistantResponse = async (response, assistantId) => {
+    if (!response.body) {
+      throw new Error("No se pudo leer el stream de respuesta.");
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let fullText = "";
+
+    let done = false;
+    while (!done) {
+      const chunkResult = await reader.read();
+      done = chunkResult.done;
+      if (done) break;
+
+      const chunk = decoder.decode(chunkResult.value, { stream: true });
+      fullText += chunk;
+      updateAssistantMessage(assistantId, fullText);
+    }
+
+    const finalText = fullText.trim() || "No tengo respuesta por ahora.";
+    updateAssistantMessage(assistantId, finalText);
+  };
 
   const sendMessage = async () => {
     setError("");
     const userMessage = message.trim();
-    if (!userMessage || loading ) return;
-    setMessages(prev => [...prev, {
-      role: "user",
-      content: userMessage
-    }])
+    if (!userMessage || loading) return;
+
+    const userId = nextId();
+    const assistantId = nextId();
+
+    setMessages((prev) => [
+      ...prev,
+      createMessage(userId, "user", userMessage),
+      createMessage(assistantId, "assistant", ""),
+    ]);
+
+    setMessage("");
+    setLoading(true);
+
     try {
-      setMessage("");
-      setLoading(true);
-      const response = await fetch("https://portfolio-phi-lyart-70.vercel.app/api/chat", {
+      const response = await fetch(CHAT_ENDPOINT, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: userMessage })
+        body: JSON.stringify({ message: userMessage }),
       });
 
       if (!response.ok) {
-        throw new Error("Error al enviar el mensaje");
+        throw new Error("Error al enviar el mensaje.");
       }
-      const data = await response.json();
-      const raw = data?.response ?? "";
 
-      const cleanText = raw
-        .replace(/\u00A0/g, " ")
-        .replace(/\n{3,}/g, "\n\n")
-        .replace(/[ \t]+/g, " ")
-        .trim();
-      setMessages(prev => [...prev, {
-        role: "assistant",
-        content: cleanText || "No tengo respuesta por ahora."
-      }])
-
-
-    } catch (error) {
+      await streamAssistantResponse(response, assistantId);
+    } catch (requestError) {
       setError("Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.");
-      setMessages(prev => [...prev, {
-        role: "assistant",
-        content: "Lo siento, ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo."
-      }])
+      updateAssistantMessage(
+        assistantId,
+        "Lo siento, ocurrió un error al responder. Por favor, intenta nuevamente."
+      );
     } finally {
       setLoading(false);
     }
-  }
+  };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault(); // Evita el salto de línea
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
       if (!loading && message.trim()) sendMessage();
     }
-  }
-
+  };
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[70]">
@@ -112,21 +179,9 @@ export const Chat = () => {
 
           <div className="flex-1 overflow-y-auto px-4 sm:px-5 py-5 bg-[linear-gradient(180deg,#fffef9_0%,#fbf8ef_100%)]">
             <div className="space-y-4">
-              {messages.map((msg, i) => {
-                const isUser = msg.role === "user";
-
-                return (
-                  <div key={`${msg.role}-${i}`} className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[90%] sm:max-w-[78%] rounded-2xl px-4 py-3 border ${isUser ? "bg-[var(--accent)] text-white  border-[var(--accent)] rounded-br-md" : "bg-white text-[var(--ink-strong)] border-[var(--line)] rounded-bl-md"}`}>
-                      <div className="flex items-center gap-2 mb-1.5 text-xs">
-                        {isUser ? <UserRound size={14} /> : <Bot size={14} />}
-                        <span>{isUser ? "Tú" : "Asistente"}</span>
-                      </div>
-                      <p className={`text-sm sm:text-base leading-relaxed whitespace-pre-wrap ${isUser ? "text-white" : "text-[var(--ink-strong)]"}`}>{msg.content}</p>
-                    </div>
-                  </div>
-                );
-              })}
+              {messages.map((item) => (
+                <MessageBubble key={item.id} message={item} />
+              ))}
 
               {loading && (
                 <div className="flex justify-start">
@@ -140,8 +195,8 @@ export const Chat = () => {
                   </div>
                 </div>
               )}
-              <div ref={messageEndRef} />
 
+              <div ref={messageEndRef} />
             </div>
           </div>
 
@@ -150,10 +205,11 @@ export const Chat = () => {
               <textarea
                 value={message}
                 onKeyDown={handleKeyDown}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={(event) => setMessage(event.target.value)}
                 placeholder="Escribe tu pregunta..."
                 className="min-h-[48px] max-h-32 w-full rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-[var(--ink-strong)] placeholder:text-[var(--ink-soft)] focus:outline-none focus:ring-2 focus:ring-emerald-500/30 resize-none"
               />
+
               <button
                 onClick={sendMessage}
                 disabled={loading || !message.trim()}
@@ -168,6 +224,7 @@ export const Chat = () => {
                 </span>
               </button>
             </div>
+
             {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
           </div>
         </div>
