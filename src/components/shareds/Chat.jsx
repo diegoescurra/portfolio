@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, MessageCircle, SendHorizontal, Sparkles, UserRound, X } from "lucide-react";
-
-const CHAT_ENDPOINT = "https://portfolio-phi-lyart-70.vercel.app/api/chat";
-
-function createMessage(id, role, content) {
-  return { id, role, content };
-}
+import { Streamdown } from "streamdown";
+import "streamdown/styles.css";
+import { useAiStream } from "../../hooks/useAiStream";
 
 function MessageBubble({ message }) {
   const isUser = message.role === "user";
@@ -28,7 +25,13 @@ function MessageBubble({ message }) {
             isUser ? "text-white" : "text-[var(--ink-strong)]"
           }`}
         >
-          {message.content}
+          {isUser ? (
+            message.content
+          ) : (
+            <Streamdown isAnimating={Boolean(message.isStreaming)}>
+              {message.content}
+            </Streamdown>
+          )}
         </p>
       </div>
     </div>
@@ -38,18 +41,9 @@ function MessageBubble({ message }) {
 export const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([
-    createMessage(
-      "assistant-welcome",
-      "assistant",
-      "Hola, soy PortaBot, asistente del portafolio de Diego. ¿En qué puedo ayudarte?"
-    ),
-  ]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const { messages, loading, error, sendMessage } = useAiStream();
 
   const messageEndRef = useRef(null);
-  const idCounterRef = useRef(0);
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -67,87 +61,16 @@ export const Chat = () => {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isOpen]);
 
-  const nextId = () => {
-    idCounterRef.current += 1;
-    return `msg-${idCounterRef.current}`;
-  };
-
-  const updateAssistantMessage = (assistantId, content) => {
-    setMessages((prev) =>
-      prev.map((item) => (item.id === assistantId ? { ...item, content } : item))
-    );
-  };
-
-  const streamAssistantResponse = async (response, assistantId) => {
-    if (!response.body) {
-      throw new Error("No se pudo leer el stream de respuesta.");
-    }
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let fullText = "";
-
-    let done = false;
-    while (!done) {
-      const chunkResult = await reader.read();
-      done = chunkResult.done;
-      if (done) break;
-
-      const chunk = decoder.decode(chunkResult.value, { stream: true });
-      fullText += chunk;
-      updateAssistantMessage(assistantId, fullText);
-    }
-
-    const finalText = fullText.trim() || "No tengo respuesta por ahora.";
-    updateAssistantMessage(assistantId, finalText);
-  };
-
-  const sendMessage = async () => {
-    setError("");
-    const userMessage = message.trim();
-    if (!userMessage || loading) return;
-
-    const userId = nextId();
-    const assistantId = nextId();
-
-    setMessages((prev) => [
-      ...prev,
-      createMessage(userId, "user", userMessage),
-      createMessage(assistantId, "assistant", ""),
-    ]);
-
+  const handleSendMessage = async () => {
+    const currentMessage = message;
     setMessage("");
-    setLoading(true);
-
-    try {
-      const response = await fetch(CHAT_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: userMessage }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Error al enviar el mensaje.");
-      }
-
-      await streamAssistantResponse(response, assistantId);
-    } catch (requestError) {
-      setError("Ocurrió un error al enviar tu mensaje. Por favor, intenta de nuevo.");
-      updateAssistantMessage(
-        assistantId,
-        "Lo siento, ocurrió un error al responder. Por favor, intenta nuevamente."
-      );
-    } finally {
-      setLoading(false);
-    }
+    await sendMessage(currentMessage);
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
-      if (!loading && message.trim()) sendMessage();
+      if (!loading && message.trim()) handleSendMessage();
     }
   };
 
@@ -211,7 +134,7 @@ export const Chat = () => {
               />
 
               <button
-                onClick={sendMessage}
+                onClick={handleSendMessage}
                 disabled={loading || !message.trim()}
                 className="h-12 shrink-0 rounded-xl bg-[var(--accent)] px-4 sm:px-5 text-[#effbf7] font-medium transition hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Enviar mensaje"
