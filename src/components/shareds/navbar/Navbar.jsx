@@ -37,11 +37,12 @@ export const Navbar = () => {
           }
         });
       },
-      { rootMargin: '-40% 0px -50% 0px', threshold: 0.1 }
+      { rootMargin: '-30% 0px -60% 0px', threshold: 0}
     );
 
     sections.forEach((sectionId) => {
       const section = document.getElementById(sectionId);
+      console.log("section", section);
       if (section) observer.observe(section);
     });
 
