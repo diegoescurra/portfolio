@@ -5,6 +5,7 @@ const selectedWork = [
     name: "Centro Cultural La Moneda",
     description:
      "Participación activa en entorno de producción, abordando incidencias recurrentes y asegurando la estabilidad del sistema tras cambios y despliegues. Trabajo enfocado en diagnóstico y resolución de problemas en código e integraciones.",
+    href: "https://cclm.cl/"
   },
   {
     name: "Experiencia Tomasina",
