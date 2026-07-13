@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 
-const CHAT_ENDPOINT = 'https://portfolio-phi-lyart-70.vercel.app/api/chat';
+const CHAT_ENDPOINT = 'https://diegoescurra.dev/api/chat';
 const CONVERSATION_STORAGE_KEY = "portafolio-chat-conversation-id";
 
 function getConversationId() {
@@ -33,11 +33,7 @@ export const useAiStream = () => {
       "assistant",
       "Hola, soy PortaBot, asistente del portafolio de Diego. ¿En qué puedo ayudarte?"
     ),
-    createMessage(
-      "assistant-privacy",
-      "assistant",
-      "Aviso de privacidad: esta conversación se guarda para revisar y mejorar el asistente. No compartas datos privados ni otra información sensible."
-    ),
+    
   ]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
