@@ -1,12 +1,9 @@
-const rateLimit = {};
-const WINDOW_MS = 60 * 1000;
-const MAX_REQUESTS = 7;
-const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "https://diegoescurra.dev";
+import { applyRateLimitHeaders, checkChatRateLimit } from "./lib/rateLimit.js";
+import { saveChatMessages } from "./lib/chatHistory.js";
+import { createEmbedding } from "./rag/createEmbedding.js";
+import { searchChunks } from "./rag/searchChunk.js";
 
-function getIp(req) {
-  const forwarded = req.headers["x-forwarded-for"];
-  return forwarded ? forwarded.split(",")[0].trim() : req.connection.remoteAddress;
-}
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "https://diegoescurra.dev";
 
 function setCorsHeaders(res) {
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
@@ -14,29 +11,18 @@ function setCorsHeaders(res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
-function setRateLimitHeaders(res, remaining) {
-  res.setHeader("X-RateLimit-Limit", MAX_REQUESTS);
-  res.setHeader("X-RateLimit-Remaining", Math.max(0, remaining));
-}
-
-function getRateLimitState(ip) {
-  const now = Date.now();
-  const current = rateLimit[ip];
-
-  if (!current || now - current.start >= WINDOW_MS) {
-    rateLimit[ip] = { count: 1, start: now };
-    return { limited: false, remaining: MAX_REQUESTS - 1 };
+function formatRetrievedContext(chunks) {
+  if (!chunks.length) {
+    return "No se encontró contexto adicional para esta pregunta.";
   }
 
-  current.count += 1;
-  if (current.count > MAX_REQUESTS) {
-    return { limited: true, remaining: 0 };
-  }
-
-  return { limited: false, remaining: MAX_REQUESTS - current.count };
+  // Keep only the text needed by the model. Metadata remains useful for debugging in Supabase.
+  return chunks
+    .map((chunk, index) => `[Fragmento ${index + 1}: ${chunk.source || "sin fuente"}]\n${chunk.content}`)
+    .join("\n\n---\n\n");
 }
 
-function buildPrompt(message) {
+function buildPrompt(message, retrievedContext) {
   const context = `
 IDENTIDAD:
 - Nombre: Diego Escurra.
@@ -126,9 +112,14 @@ Guía:
 - Preguntas fuera de contexto -> decir que no hay información
 - Actualmente ya no trabaja en IDA, su fecha de termino es reciente, por lo que está buscando trabajo activamente, pero no es necesario decirlo a menos que se pregunte directamente por su situación laboral
 - Si una pregunta es ambigua, responde con lo que sí está confirmado y evita asumir
+- El contexto recuperado contiene fragmentos de la base de conocimiento y debe usarse como fuente principal para detalles específicos
+- Si el contexto recuperado no responde la pregunta, dilo claramente en vez de completar información
 
 Contexto:
 ${context}
+
+Contexto recuperado:
+${retrievedContext}
 
 Pregunta:
 ${safeMessage}
@@ -139,6 +130,27 @@ async function streamOpenRouterToClient(openRouterStream, res) {
   const reader = openRouterStream.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
+  let responseText = "";
+
+  const writeToken = (rawLine) => {
+    const line = rawLine.trim();
+    if (!line.startsWith("data:")) return;
+
+    const data = line.slice(5).trim();
+    if (!data || data === "[DONE]") return;
+
+    try {
+      const parsed = JSON.parse(data);
+      const token = parsed?.choices?.[0]?.delta?.content;
+
+      if (token) {
+        responseText += token;
+        res.write(token);
+      }
+    } catch {
+      // Ignore malformed SSE events without interrupting an otherwise valid response.
+    }
+  };
 
   while (true) {
     const { done, value } = await reader.read();
@@ -148,28 +160,17 @@ async function streamOpenRouterToClient(openRouterStream, res) {
     const lines = buffer.split("\n");
     buffer = lines.pop() || "";
 
-    for (const rawLine of lines) {
-      const line = rawLine.trim();
-      if (!line.startsWith("data:")) continue;
-
-      const data = line.slice(5).trim();
-      if (!data || data === "[DONE]") continue;
-
-      try {
-        const parsed = JSON.parse(data);
-        const token = parsed?.choices?.[0]?.delta?.content;
-        if (token) {
-          res.write(token);
-        }
-      } catch {
-        // Ignora chunks no parseables.
-      }
-    }
+    lines.forEach(writeToken);
   }
+
+  // Process a final event when the provider closes the stream without a trailing newline.
+  writeToken(buffer);
+  return responseText.trim();
 }
 
 export default async function handler(req, res) {
   setCorsHeaders(res);
+  res.setHeader("Access-Control-Expose-Headers", "RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, Retry-After, X-RateLimit-Daily-Limit, X-RateLimit-Daily-Remaining");
 
   if (req.method === "OPTIONS") {
     return res.status(204).end();
@@ -179,20 +180,30 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const ip = getIp(req);
-  const { limited, remaining } = getRateLimitState(ip);
-  setRateLimitHeaders(res, remaining);
+  try {
+    const rateLimit = await checkChatRateLimit(req);
+    applyRateLimitHeaders(res, rateLimit);
 
-  if (limited) {
-    return res.status(429).json({ error: "Demasiadas solicitudes, intenta más tarde." });
+    if (!rateLimit.success) {
+      return res.status(429).json({ error: "Has alcanzado el límite de mensajes. Intenta nuevamente más tarde." });
+    }
+  } catch (error) {
+    // Fail closed: if Redis is unavailable, do not risk calling the paid AI provider without protection.
+    console.error("Rate limit unavailable:", error);
+    return res.status(503).json({ error: "El chat no está disponible temporalmente. Intenta nuevamente más tarde." });
   }
 
-  const { message } = req.body || {};
+  const { message, conversationId } = req.body || {};
   if (!message) {
     return res.status(400).json({ error: "Message is required" });
   }
 
   try {
+    // RAG flow: embed the user's question, then retrieve only the most relevant knowledge chunks.
+    const queryEmbedding = await createEmbedding(message);
+    const matchingChunks = await searchChunks(queryEmbedding);
+    const retrievedContext = formatRetrievedContext(matchingChunks);
+
     const openRouterResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -209,7 +220,7 @@ export default async function handler(req, res) {
           },
           {
             role: "user",
-            content: buildPrompt(message),
+            content: buildPrompt(message, retrievedContext),
           },
         ],
         stream: true,
@@ -226,7 +237,16 @@ export default async function handler(req, res) {
     res.setHeader("Cache-Control", "no-cache, no-transform");
     res.setHeader("Connection", "keep-alive");
 
-    await streamOpenRouterToClient(openRouterResponse.body, res);
+    const assistantMessage = await streamOpenRouterToClient(openRouterResponse.body, res);
+
+    try {
+      // Persist after streaming so the database stores the exact final answer seen by the visitor.
+      await saveChatMessages({ conversationId, userMessage: message, assistantMessage });
+    } catch (storageError) {
+      // History is useful but must not turn a successful model response into a client error.
+      console.error("Could not save chat history:", storageError);
+    }
+
     return res.end();
   } catch (error) {
     console.error("Error generating response:", error);

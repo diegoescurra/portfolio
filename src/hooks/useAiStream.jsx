@@ -1,6 +1,23 @@
 import { useCallback, useRef, useState } from "react";
 
 const CHAT_ENDPOINT = 'https://portfolio-phi-lyart-70.vercel.app/api/chat';
+const CONVERSATION_STORAGE_KEY = "portafolio-chat-conversation-id";
+
+function getConversationId() {
+  try {
+    const storedId = window.localStorage.getItem(CONVERSATION_STORAGE_KEY);
+    if (storedId) return storedId;
+
+    const conversationId = window.crypto?.randomUUID?.();
+    if (!conversationId) return null;
+
+    window.localStorage.setItem(CONVERSATION_STORAGE_KEY, conversationId);
+    return conversationId;
+  } catch {
+    // The API can create a temporary ID if storage is unavailable in private/restricted browsers.
+    return null;
+  }
+}
 
 const createMessage = (id, role, content, isStreaming = false) => ({
   id,
@@ -20,6 +37,7 @@ export const useAiStream = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const idCounterRef = useRef(0);
+  const conversationIdRef = useRef(null);
 
   const nextId = useCallback(() => {
     idCounterRef.current += 1;
@@ -79,12 +97,17 @@ export const useAiStream = () => {
       setLoading(true);
 
       try {
+        conversationIdRef.current ||= getConversationId();
+
         const response = await fetch(CHAT_ENDPOINT, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ message: userMessage }),
+          body: JSON.stringify({
+            message: userMessage,
+            conversationId: conversationIdRef.current,
+          }),
         });
 
         if (!response.ok) {
