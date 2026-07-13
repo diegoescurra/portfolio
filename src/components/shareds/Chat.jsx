@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bot, MessageCircle, SendHorizontal, Sparkles, UserRound, X } from "lucide-react";
+import { Bot, MessageCircle, SendHorizontal, ShieldAlert, Sparkles, UserRound, X } from "lucide-react";
 import { Streamdown } from "streamdown";
 import "streamdown/styles.css";
 import { useAiStream } from "../../hooks/useAiStream";
@@ -20,7 +20,7 @@ function MessageBubble({ message }) {
           {isUser ? <UserRound size={14} /> : <Bot size={14} />}
           <span>{isUser ? "Tú" : "Asistente"}</span>
         </div>
-        <p
+        <div
           className={`text-sm sm:text-base leading-relaxed whitespace-pre-wrap ${
             isUser ? "text-white" : "text-[var(--ink-strong)]"
           }`}
@@ -32,7 +32,7 @@ function MessageBubble({ message }) {
               {message.content}
             </Streamdown>
           )}
-        </p>
+        </div>
       </div>
     </div>
   );
@@ -149,6 +149,10 @@ export const Chat = () => {
             </div>
 
             {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+            <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-relaxed text-[var(--ink-soft)]">
+              <ShieldAlert size={13} className="mt-0.5 shrink-0" />
+              Los mensajes se guardan. No compartas contraseñas, claves ni información sensible.
+            </p>
           </div>
         </div>
       )}
