@@ -4,28 +4,28 @@ import portteckImage from "../assets/Portteck.png";
 import tehagoelcvImage from "../assets/tehagoelcv.png";
 
 export const workItems = [
-  {
-    id: "altomonte",
-    title: "Altomonte Bienes Raices",
-    subtitle: "Corredora de propiedades independiente · sitio web a medida",
-    description:
-      "Diseño y desarrollo de sitio web para corredora de propiedades independiente, orientado a mostrar propiedades de forma clara y facilitar el contacto con potenciales clientes. Se trabajó en la estructura de contenidos, experiencia mobile y optimización de rendimiento para mejorar la navegación.",
-    href: "https://altomontebienesraices.com",
-    highlights: [
-      "Desarrollo fullstack de plataforma web a medida",
-      "Implementación de sistema de gestión y visualización de propiedades",
-      "Definición de arquitectura de contenido orientada a navegación clara",
-      "Optimización responsive con foco en experiencia mobile",
-      "Optimización de rendimiento para mejorar tiempos de carga",
-    ],
-    stack: ["next", "node", "postgre"],
-    mainImage: {
-      src: altomonteImage,
-      alt: "Altomonte home",
-      href: "https://altomontebienesraices.com/",
-    },
+  // {
+  //   id: "altomonte",
+  //   title: "Altomonte Bienes Raices",
+  //   subtitle: "Corredora de propiedades independiente · sitio web a medida",
+  //   description:
+  //     "Diseño y desarrollo de sitio web para corredora de propiedades independiente, orientado a mostrar propiedades de forma clara y facilitar el contacto con potenciales clientes. Se trabajó en la estructura de contenidos, experiencia mobile y optimización de rendimiento para mejorar la navegación.",
+  //   href: "https://altomontebienesraices.com",
+  //   highlights: [
+  //     "Desarrollo fullstack de plataforma web a medida",
+  //     "Implementación de sistema de gestión y visualización de propiedades",
+  //     "Definición de arquitectura de contenido orientada a navegación clara",
+  //     "Optimización responsive con foco en experiencia mobile",
+  //     "Optimización de rendimiento para mejorar tiempos de carga",
+  //   ],
+  //   stack: ["next", "node", "postgre"],
+  //   mainImage: {
+  //     src: altomonteImage,
+  //     alt: "Altomonte home",
+  //     href: "https://altomontebienesraices.com/",
+  //   },
 
-  },
+  // },
   {
     id: "ranut",
     title: "Ranut",
