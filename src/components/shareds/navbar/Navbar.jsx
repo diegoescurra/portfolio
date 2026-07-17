@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import './navbar.css'
 
 const NAV_ITEMS = [
-  { id: 1, label: 'inicio', target: 'inicio' },
-  { id: 2, label: 'freelance', target: 'freelance' },
-  { id: 3, label: 'experiencia', target: 'experiencia' },
-  { id: 4, label: 'contacto', target: 'contacto' }
+  { id: 1, label: 'Inicio', target: 'inicio' },
+  { id: 2, label: 'Proyectos', target: 'proyectos' },
+  { id: 3, label: 'Experiencia', target: 'experiencia' },
+  { id: 4, label: 'Contacto', target: 'contacto' }
 ]
 
 export const Navbar = () => {
-  const [active, setActive] = useState('inicio');
+  const [active, setActive] = useState('Inicio');
   const lastScrollTop = useRef(0);
 
   useEffect(() => {

@@ -15,29 +15,36 @@ export const Hero = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--accent)]">
-                <BriefcaseBusiness size={16} className="mr-2" /> Full Stack Developer
+                <BriefcaseBusiness size={16} className="mr-2" /> Ingeniero Informático · Full Stack
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold text-[var(--ink-strong)] leading-tight">
                 <span className="block">Diego Escurra</span>
-                <span className="block mt-3 text-[var(--accent)] text-2xl md:text-4xl">Desarrollo soluciones digitales a medida.</span>
+                <span className="block mt-3 text-[var(--accent)] text-2xl md:text-4xl">Desarrollo, mejoro sitios y aplicaciones web.</span>
               </h1>
 
               <p className="text-lg md:text-xl max-w-2xl leading-relaxed">
-                Trabajo en el desarrollo de sitios y aplicaciones web en producción, para clientes e instituciones.
-                Participo en implementación, mejoras y corrección de errores en sistemas reales.
+                Creo, mantengo y optimizo soluciones digitales para empresas, instituciones y profesionales, trabajando en frontend, backend, integraciones, rendimiento y accesibilidad.
               </p>
 
-              <div className="flex flex-wrap gap-3">
-                <a href="#freelance" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--accent)] text-[#effbf7] font-medium hover:brightness-95 transition">
-                  Ver proyectos <ArrowRight size={16} />
-                </a>
-                <a href="https://www.linkedin.com/in/diego-escurra/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--ink-strong)] font-medium hover:border-[var(--accent)] transition">
-                  LinkedIn
-                </a>
-                <a href="https://github.com/diegoescurra" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--ink-strong)] font-medium hover:border-[var(--accent)] transition">
-                  GitHub
-                </a>
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-3">
+                  <a href="#contacto" className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--accent)] text-[#effbf7] font-medium hover:brightness-95 transition">
+                    Hablemos <ArrowRight size={16} />
+                  </a>
+                  <a href="#proyectos" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--ink-strong)] font-medium hover:border-[var(--accent)] transition">
+                    Ver proyectos <ArrowRight size={16} />
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-[var(--ink-soft)]">
+                  <a href="https://www.linkedin.com/in/diego-escurra/" target="_blank" rel="noreferrer" className="hover:text-[var(--accent)] transition">
+                    LinkedIn
+                  </a>
+                  <span aria-hidden="true">·</span>
+                  <a href="https://github.com/diegoescurra" target="_blank" rel="noreferrer" className="hover:text-[var(--accent)] transition">
+                    GitHub
+                  </a>
+                </div>
               </div>
 
               <div className="pt-8 border-t border-[var(--line)]">

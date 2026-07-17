@@ -4,19 +4,19 @@ const selectedWork = [
   {
     name: "Centro Cultural La Moneda",
     description:
-     "Participación activa en entorno de producción, abordando incidencias recurrentes y asegurando la estabilidad del sistema tras cambios y despliegues. Trabajo enfocado en diagnóstico y resolución de problemas en código e integraciones.",
+     "Resolución de incidencias en el sitio y su plataforma de venta de entradas, trabajando sobre código e integraciones en producción para mantener la estabilidad del sistema después de cambios y despliegues.",
     href: "https://cclm.cl/"
   },
   {
     name: "Experiencia Tomasina",
     description:
-      "Desarrollo de soluciones frontend y backend centradas en la integración de servicios y manejo de contenido dinámico, incluyendo la migración desde WordPress a una estructura basada en Markdown y la implementación de Nginx como reverse proxy para encapsular el acceso a servicios externos.",
+      "Desarrollo de funcionalidades frontend y backend, integración de servicios y migración de contenido desde WordPress hacia una estructura basada en Markdown. También implementé Nginx como reverse proxy para centralizar el acceso a servicios externos.",
     href: "https://experienciatomasina.ust.cl/"
   },
   {
     name: "Training for Women",
     description:
-      "Desarrollo de la lógica de asignación de rutinas para clientes, reorganizando la relación entre macrociclos, ejercicios y planes de entrenamiento, junto con la adaptación del frontend y resolución de incidencias previas a la entrega del proyecto.",
+      "Desarrollo y reorganización de la lógica de asignación de rutinas, macrociclos, ejercicios y planes de entrenamiento. También adapté el frontend y resolví incidencias antes de la entrega del proyecto.",
     href: "https://t4w.cl/"
   },
 ];
@@ -27,9 +27,9 @@ export const ExperienceShowcase = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-14">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)] mb-3">Experiencia profesional</p>
-          <h2 className="text-4xl md:text-5xl text-[var(--ink-strong)] mb-4">Experiencia en IDA</h2>
+          <h2 className="text-4xl md:text-5xl text-[var(--ink-strong)] mb-4">Desarrollo Full Stack en IDA</h2>
           <p className="max-w-3xl leading-relaxed">
-            Participé en el desarrollo y evolución de soluciones web en producción, trabajando con distintos clientes e instituciones. Mi enfoque estuvo en construir funcionalidades robustas, mejorar el rendimiento y asegurar una experiencia consistente para el usuario final.
+            Trabajé en el desarrollo, mantenimiento y optimización de soluciones web para clientes e instituciones, implementando funcionalidades, integrando servicios y resolviendo incidencias en sistemas en producción.
           </p>
         </header>
 
@@ -37,18 +37,19 @@ export const ExperienceShowcase = () => {
           <div className="grid lg:grid-cols-12 gap-10">
             <div className="lg:col-span-4">
               <p className="text-2xl text-[var(--ink-strong)] mb-2">Full Stack Developer</p>
-              <p className="text-sm text-[var(--ink-soft)]">2025 - marzo 2026</p>
+              <p className="text-sm text-[var(--ink-soft)]">Agosto 2025 – marzo 2026</p>
             </div>
 
             <div className="lg:col-span-8">
               <p className="leading-relaxed mb-6">
-                Colaboré de forma transversal con equipos de diseño y producto, transformando requerimientos en soluciones técnicas implementables y mantenibles.
+                Colaboré con equipos de diseño, producto y desarrollo para transformar requerimientos en soluciones técnicas mantenibles y adaptadas a las necesidades de cada proyecto.
               </p>
 
               <ul className="list-disc pl-5 space-y-2 text-[var(--ink-soft)]">
-                <li>Desarrollo y mantenimiento de funcionalidades frontend y backend, abarcando lógica de negocio y modelado de datos.</li>
-                <li>Optimización de rendimiento y Core Web Vitals en sitios en producción, reduciendo tiempos de carga y mejorando la experiencia de usuario.</li>
-                <li>Resolución de incidencias en entornos productivos, asegurando estabilidad y continuidad operativa.</li>
+                <li>Desarrollo y mantenimiento de funcionalidades frontend y backend, incluyendo lógica de negocio y manejo de datos.</li>
+                <li>Optimización de rendimiento, Core Web Vitals, SEO técnico y accesibilidad en sitios en producción.</li>
+                <li>Integración de servicios y gestión de contenido dinámico.</li>
+                <li>Diagnóstico y resolución de incidencias para mantener la estabilidad y continuidad de los sistemas.</li>
               </ul>
             </div>
           </div>
@@ -56,7 +57,7 @@ export const ExperienceShowcase = () => {
 
         <div className="border-t border-[var(--line)] pt-8">
           <h3 className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.16em] text-[var(--ink-soft)] mb-5">
-            <BriefcaseBusiness size={14} /> Proyectos destacados en esta etapa
+            <BriefcaseBusiness size={14} /> Proyectos destacados
           </h3>
 
           <ul className="space-y-4">

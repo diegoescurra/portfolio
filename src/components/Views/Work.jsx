@@ -120,14 +120,14 @@ const WorkCard = memo(function WorkCard({ item, reverse = false }) {
 
 export const Work = () => {
   return (
-    <section id="freelance" className="py-20 relative overflow-hidden">
+    <section id="proyectos" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-14">
           <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--accent)]">
-            <Terminal size={16} className="mr-2" /> Portafolio
+            <Terminal size={16} className="mr-2" /> Proyectos
           </div>
-          <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-2">Proyectos desarrollados para necesidades reales.</h2>
-          <p>Desarrollo de sitios y plataformas, trabajando en arquitectura, funcionalidades e integración de servicios, donde cada proyecto se construye en base a requerimientos concretos, cuidando estructura, interacción y funcionamiento.</p>
+          <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-2">Sitios y aplicaciones para clientes</h2>
+          <p>Una selección de proyectos en los que trabajé desde la definición de requerimientos hasta el desarrollo y la integración de servicios.</p>
         </div>
 
         <div className="space-y-10">

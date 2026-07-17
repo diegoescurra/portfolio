@@ -39,7 +39,7 @@ export const Contact = () => {
           <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[var(--line)] bg-[var(--bg-surface)] text-[var(--accent)]">
             <Sparkles size={16} className="mr-2" /> Conectemos
           </div>
-          <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-4">Ponte en contacto</h2>
+          <h2 className="text-4xl font-bold text-[var(--ink-strong)] mb-4">Hablemos sobre tu proyecto</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
@@ -62,7 +62,7 @@ export const Contact = () => {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
+                  Correo electrónico
                 </label>
                 <ValidationError
               prefix="Email"
@@ -93,7 +93,7 @@ export const Contact = () => {
                   name="message"
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl border border-[var(--line)] bg-white focus:ring-2 focus:ring-emerald-500/40 focus:border-transparent transition-colors"
-                  placeholder="Tu mensaje..."
+                  placeholder="Cuéntame brevemente qué necesitas, los objetivos del proyecto y si tienes una fecha estimada."
                   required
                 />
               </div>
@@ -102,7 +102,7 @@ export const Contact = () => {
                 type="submit"
                 className="w-full bg-[var(--accent)] text-[#ecf9f6] py-3 px-6 rounded-xl hover:brightness-95 transition-colors flex items-center justify-center gap-2"
               >
-                Enviar
+                Enviar mensaje
                 <Send size={16} />
               </button>
             </form>
@@ -110,17 +110,18 @@ export const Contact = () => {
 
           <div className="space-y-8 lg:pl-8">
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--bg-surface)] p-6">
-              <h3 className="text-2xl text-[var(--ink-strong)] mb-3">En qué puedo ayudarte:</h3>
+              <h3 className="text-2xl text-[var(--ink-strong)] mb-3">¿En qué puedo ayudarte?</h3>
               <ul className="list-disc space-y-2 text-[var(--ink-soft)] px-4">
-                <li>Desarrollo frontend para productos web claros y funcionales</li>
-                <li>Implementación de soluciones full stack para procesos y operaciones reales</li>
-                <li>Rediseños de experiencia y optimización de performance web</li>
+                <li>Desarrollo de landing pages, sitios corporativos y aplicaciones web.</li>
+                <li>Implementación de funcionalidades frontend y backend.</li>
+                <li>Integración de APIs, bases de datos y gestores de contenido.</li>
+                <li>Mejora de rendimiento, accesibilidad y SEO técnico.</li>
               </ul>
             </div>
 
             <div className="prose prose-lg">
               <p className="text-lg">
-              Si tienes una oportunidad, un proyecto o una idea para mejorar una plataforma existente, escríbeme y te respondo pronto.
+              ¿Necesitas desarrollar un sitio, implementar una funcionalidad o mejorar una plataforma existente? Escríbeme con una breve descripción y te responderé para revisar el proyecto.
               </p>
             </div>
 
