@@ -70,7 +70,14 @@ export const ExperienceShowcase = () => {
                   <p className="text-sm text-[var(--ink-soft)]">{item.description}</p>
                 </div>
                 {item.href ? (
-                  <a className="text-[var(--ink-soft)] mt-0.5" href={item.href} target="_blank" rel="noreferrer">
+                  <a
+                    className="text-[var(--ink-soft)] mt-0.5"
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Visitar el proyecto ${item.name}`}
+                    title={`Visitar ${item.name}`}
+                  >
                     <ArrowUpRight size={16} />
                   </a>
                 ) : (

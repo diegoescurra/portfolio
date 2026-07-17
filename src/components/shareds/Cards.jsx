@@ -61,10 +61,11 @@ export const Cards = (props) => {
            {
             props.github && (
               <a
-              href={props.github}
-              className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
-              target="_blank" rel="noreferrer"
-            >
+               href={props.github}
+               className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
+               target="_blank" rel="noreferrer"
+               aria-label={`Ver código de ${props.title} en GitHub`}
+             >
               <Github size={20} className="text-gray-900" />
             </a>
             )
@@ -72,10 +73,11 @@ export const Cards = (props) => {
            {
             props.href && (
               <a
-              href={props.href}
-              className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
-              target="_blank" rel="noreferrer"
-            >
+               href={props.href}
+               className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
+               target="_blank" rel="noreferrer"
+               aria-label={`Visitar el proyecto ${props.title}`}
+             >
               <ExternalLink size={20} className="text-gray-900" />
             </a>
             )

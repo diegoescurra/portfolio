@@ -42,7 +42,6 @@ export const Navbar = () => {
 
     sections.forEach((sectionId) => {
       const section = document.getElementById(sectionId);
-      console.log("section", section);
       if (section) observer.observe(section);
     });
 

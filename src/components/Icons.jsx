@@ -6,7 +6,7 @@ export const LinkedinIcon = () => (
     viewBox="0 0 256 256"
     className={` w-full h-auto `}
   >
-    <path fill="rgba(255, 255, 255, 1)" d="M h256v256H0z" />
+    
     <g fill="none">
       <rect width={256} height={256} fill="#fff" rx={60} />
       <rect width={256} height={256} fill="#0A66C2" rx={60} />

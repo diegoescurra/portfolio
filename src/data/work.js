@@ -1,4 +1,3 @@
-import altomonteImage from "../assets/altomonte_home.png";
 import ranutImage from "../assets/Ranut.png";
 import portteckImage from "../assets/Portteck.png";
 import tehagoelcvImage from "../assets/tehagoelcv.png";
